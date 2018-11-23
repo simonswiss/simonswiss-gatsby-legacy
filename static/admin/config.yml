@@ -18,6 +18,9 @@ collections:
         fields:
           - { label: 'Headline', name: 'headline', widget: 'string' }
           - { label: 'Paragraph', name: 'paragraph', widget: 'text' }
-          - { label: 'Pullquote', name: 'pullquote', widget: 'object', fields: 
+          - label: 'Pullquote'
+            name: 'pullquote'
+            widget: 'object', 
+            fields: 
             - { label: 'Quote', name: 'quote', widget: 'text' }
             - { label: 'Author', name: 'author', widget: 'string' }
