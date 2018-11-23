@@ -15,10 +15,16 @@ collections:
 
       - label: 'Longform Post'
         name: 'longform'
-        widget: 'list'
+        widget: 'object'
         fields:
-          - { label: 'Headline', name: 'headline', widget: 'string' }
-          - { label: 'Paragraph', name: 'paragraph', widget: 'text' }
+          - label: 'Headline'
+            name: 'headline'
+            widget: 'list'
+            field: { label: 'Headline', name: 'headline', widget: 'string' }
+          - label: 'Paragraph'
+            name: 'paragraph'
+            widget: 'list'
+            field: { label: 'Paragraph', name: 'paragraph', widget: 'text' }
           - label: Pullquote
             name: pullquote
             widget: object
