@@ -20,7 +20,7 @@ collections:
           - { label: 'Paragraph', name: 'paragraph', widget: 'text' }
           - label: 'Pullquote'
             name: 'pullquote'
-            widget: 'object', 
-            fields: 
-            - { label: 'Quote', name: 'quote', widget: 'text' }
-            - { label: 'Author', name: 'author', widget: 'string' }
+            widget: 'object'
+            fields:
+              - { label: 'Quote', name: 'quote', widget: 'text' }
+              - { label: 'Author', name: 'author', widget: 'string' }
