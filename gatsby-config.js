@@ -60,12 +60,12 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed`,
+    // `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `simonswiss`,
+        short_name: `simonswiss`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
