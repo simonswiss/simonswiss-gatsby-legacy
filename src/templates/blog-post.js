@@ -45,11 +45,22 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout>
+        <Helmet
+          htmlAttributes={{ lang: 'en' }}
+          meta={[
+            {
+              name: 'description',
+              content: post.shortSummary,
+            },
+          ]}
+          title={`${post.title} | simonswiss`}
+        />
         <h2 className={css(tw`text-3xl leading-tight`)}>{post.title}</h2>
         <p className={css(tw`text-grey mb-6`)}>Posted on {postDate}</p>
-        <div className={css(tw`text-xl text-grey-dark`)}>
-          {post.shortSummary}
-        </div>
+        <div
+          className={css(tw`text-xl text-grey-dark`)}
+          dangerouslySetInnerHTML={{ __html: post.shortSummary }}
+        />
         <div className={css(tw`mt-6`)} />
         {longFormPost}
       </Layout>
@@ -65,7 +76,7 @@ export const pageQuery = graphql`
       blogPost(filter: { slug: { eq: $slug } }) {
         title
         postDate
-        shortSummary
+        shortSummary(markdown: true)
         longformPost {
           ... on DatoCMS_HeadlineRecord {
             headline
@@ -82,12 +93,14 @@ export const pageQuery = graphql`
               title
               alt
             }
+            caption
           }
           ... on DatoCMS_TweetRecord {
             tweet
           }
           ... on DatoCMS_VideoRecord {
             embedCode
+            caption
           }
           ... on DatoCMS_PullquoteRecord {
             quote

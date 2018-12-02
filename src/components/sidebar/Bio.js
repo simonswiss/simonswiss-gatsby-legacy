@@ -33,12 +33,12 @@ class Bio extends React.Component {
         <p className={css(tw`text-grey-darker mt-4 md:mt-0 mb-8`)}>
           Swiss front-end designer and developer based on Sydney's Northern
           Beaches. Proud father of two. Surf, basketball, ukulele. Love
-          learning, love teaching. Front-end lead at{' '}
+          learning, love teaching - doing both with{' '}
           <a
             className={css(`text-purple no-underline hover:underline`)}
-            href="https://societyone.com.au"
+            href="https://thinkmill.com.au"
           >
-            SocietyOne
+            Thinkmill
           </a>
           .
         </p>

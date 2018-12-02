@@ -8,17 +8,22 @@ import Layout from '../components/Layout'
 
 class BlogIndex extends React.Component {
   render() {
-    // const { title, body } = this.props.data.dato.homepage
+    const { title, body } = this.props.data.dato.homepage
 
     return (
       <Layout>
-        <p>hello</p>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: 'hello' }]}
-          title="simonswiss"
+          meta={[
+            {
+              name: 'description',
+              content:
+                "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
+            },
+          ]}
+          title="simonswiss | Swiss front-end developer based in Sydney"
         />
-        {/*<article>
+        <article>
           <h1
             className={css(
               tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`
@@ -27,7 +32,7 @@ class BlogIndex extends React.Component {
             {title}
           </h1>
           <div className="cms" dangerouslySetInnerHTML={{ __html: body }} />
-            </article>*/}
+        </article>
       </Layout>
     )
   }
@@ -35,13 +40,13 @@ class BlogIndex extends React.Component {
 
 export default BlogIndex
 
-// export const pageQuery = graphql`
-//   query {
-//     dato {
-//       homepage {
-//         title
-//         body(markdown: true)
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query {
+    dato {
+      homepage {
+        title
+        body(markdown: true)
+      }
+    }
+  }
+`

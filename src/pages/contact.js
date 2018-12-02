@@ -1,13 +1,25 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import Helmet from 'react-helmet'
 import { css } from 'emotion'
 
 class Page extends React.Component {
   render() {
-    // const page = this.props.data.dato.contact
+    const page = this.props.data.dato.contact
     return (
       <Layout>
-        {/*<article>
+        <Helmet
+          htmlAttributes={{ lang: 'en' }}
+          meta={[
+            {
+              name: 'description',
+              content:
+                'I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Say hello in the live chat or send me an e-mail, don’t be shy!',
+            },
+          ]}
+          title="Get in touch | simonswiss.com"
+        />
+        <article>
           <h1
             className={css(
               tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`
@@ -19,7 +31,7 @@ class Page extends React.Component {
             className="cms"
             dangerouslySetInnerHTML={{ __html: page.body }}
           />
-            </article>*/}
+        </article>
       </Layout>
     )
   }
@@ -27,13 +39,13 @@ class Page extends React.Component {
 
 export default Page
 
-// export const pageQuery = graphql`
-//   query {
-//     dato {
-//       contact {
-//         title
-//         body(markdown: true)
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query {
+    dato {
+      contact {
+        title
+        body(markdown: true)
+      }
+    }
+  }
+`

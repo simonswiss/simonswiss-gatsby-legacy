@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { css } from 'emotion'
 import dayjs from 'dayjs'
+import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 
 class Page extends React.Component {
@@ -31,15 +32,27 @@ class Page extends React.Component {
               {post.title}
             </Link>
           </h2>
-          <p className={css(tw`mt0 mb-4 text-grey-darker`)}>
-            {post.shortSummary}
-          </p>
+          <p
+            className={css(tw`mt0 mb-4 text-grey-darker`)}
+            dangerouslySetInnerHTML={{ __html: post.shortSummary }}
+          />
           <Link to={`blog/${post.slug}`}>Read more</Link>
         </li>
       )
     })
     return (
       <Layout>
+        <Helmet
+          htmlAttributes={{ lang: 'en' }}
+          meta={[
+            {
+              name: 'description',
+              content:
+                "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
+            },
+          ]}
+          title="Blog | simonswiss"
+        />
         <article>
           <div className="cms">
             <ul className={css(tw`list-reset`)}>{postsList}</ul>
@@ -58,9 +71,9 @@ export const pageQuery = graphql`
       blogHub {
         title
       }
-      allBlogPosts {
+      allBlogPosts(orderBy: [postDate_DESC]) {
         title
-        shortSummary
+        shortSummary(markdown: true)
         slug
         postDate
       }

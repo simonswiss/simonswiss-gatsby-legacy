@@ -9,21 +9,19 @@ import Social from './sidebar/Social'
 class Layout extends React.Component {
   render() {
     const { location, children } = this.props
+
     return (
       <div className={styles.wrapper}>
-        <div>
-          <div className={styles.container}>
-            <aside className={styles.sidebar}>
-              <div className={styles.sidebarContainer}>
-                <Bio />
-                <Navigation />
-                <Social />
-              </div>
-            </aside>
-            <main className={styles.main}>{children}</main>
-          </div>
+        <div className={styles.container}>
+          <aside className={styles.sidebar}>
+            <div className={styles.sidebarContainer}>
+              <Bio />
+              <Navigation />
+              <Social />
+            </div>
+          </aside>
+          <main className={styles.main}>{children}</main>
         </div>
-
         <script src="https://embed.small.chat/T5F7UGFT3G5G0GCT3P.js" async />
       </div>
     )
@@ -32,7 +30,7 @@ class Layout extends React.Component {
 export default Layout
 
 const styles = {
-  wrapper: css(tw`flex flex-col h-screen justify-between`),
+  wrapper: css(tw`flex flex-col justify-between`),
   container: css(
     tw`my-8 md:my-16 max-w-xl mx-auto px-6 lg:flex font-sans leading-normal`
   ),
