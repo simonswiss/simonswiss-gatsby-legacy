@@ -4,10 +4,10 @@ import { css } from 'emotion'
 
 class Page extends React.Component {
   render() {
-    const page = this.props.data.dato.contact
+    // const page = this.props.data.dato.contact
     return (
       <Layout>
-        <article>
+        {/*<article>
           <h1
             className={css(
               tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`
@@ -19,7 +19,7 @@ class Page extends React.Component {
             className="cms"
             dangerouslySetInnerHTML={{ __html: page.body }}
           />
-        </article>
+            </article>*/}
       </Layout>
     )
   }
@@ -27,13 +27,13 @@ class Page extends React.Component {
 
 export default Page
 
-export const pageQuery = graphql`
-  query {
-    dato {
-      contact {
-        title
-        body(markdown: true)
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     dato {
+//       contact {
+//         title
+//         body(markdown: true)
+//       }
+//     }
+//   }
+// `

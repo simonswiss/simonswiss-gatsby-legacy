@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Blog',
@@ -11,15 +13,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-graphql',
       options: {
-        // This type will contain remote schema Query type
         typeName: 'DatoCMS',
-        // This is field under which it's accessible
         fieldName: 'dato',
-        // Url to query from
-        url: 'https://graphql.datocms.com/',
+        url: process.env.API_URL,
         headers: {
-          // Learn about environment variables: https://gatsby.app/env-vars
-          Authorization: `c0f652f0063f2303b1fdc0a85addb8`,
+          Authorization: process.env.API_TOKEN,
         },
       },
     },
@@ -76,7 +74,5 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-twitter`,
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify-identity-widget`,
   ],
 }

@@ -1,3 +1,3 @@
 import React from 'react'
 
-export default ({ headline }) => <h2>{headline}</h2>
+export default ({ block }) => <h2>{block.headline}</h2>

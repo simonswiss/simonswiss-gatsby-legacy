@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { css } from 'emotion'
+import dayjs from 'dayjs'
 
 import Layout from '../components/Layout'
 import Headline from '../components/longform/Headline'
@@ -9,10 +10,16 @@ import CodeBlock from '../components/longform/CodeBlock'
 import Paragraph from '../components/longform/Paragraph'
 import Image from '../components/longform/Image'
 import PullQuote from '../components/longform/PullQuote'
+import Tweet from '../components/longform/Tweet'
+import Video from '../components/longform/Video'
+import NotFound from '../components/longform/NotFound'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.dato.blogPost
+    const postDate = post.postDate
+      ? dayjs(post.postDate).format('MMMM D YYYY')
+      : ''
     const longFormPost = this.props.data.dato.blogPost.longformPost.map(
       (block, i) => {
         switch (block.__typename) {
@@ -26,8 +33,12 @@ class BlogPostTemplate extends React.Component {
             return <Image key={i} block={block} />
           case 'DatoCMS_PullquoteRecord':
             return <PullQuote key={i} block={block} />
+          case 'DatoCMS_TweetRecord':
+            return <Tweet key={i} block={block} />
+          case 'DatoCMS_VideoRecord':
+            return <Video key={i} block={block} />
           default:
-            return <p key={i}>block not found!</p>
+            return <NotFound key={i} block={block} />
         }
       }
     )
@@ -35,6 +46,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout>
         <h2 className={css(tw`text-3xl leading-tight`)}>{post.title}</h2>
+        <p className={css(tw`text-grey mb-6`)}>Posted on {postDate}</p>
         <div className={css(tw`text-xl text-grey-dark`)}>
           {post.shortSummary}
         </div>
@@ -52,6 +64,7 @@ export const pageQuery = graphql`
     dato {
       blogPost(filter: { slug: { eq: $slug } }) {
         title
+        postDate
         shortSummary
         longformPost {
           ... on DatoCMS_HeadlineRecord {
@@ -69,6 +82,17 @@ export const pageQuery = graphql`
               title
               alt
             }
+          }
+          ... on DatoCMS_TweetRecord {
+            tweet
+          }
+          ... on DatoCMS_VideoRecord {
+            embedCode
+          }
+          ... on DatoCMS_PullquoteRecord {
+            quote
+            authorName
+            authorLink
           }
         }
       }
