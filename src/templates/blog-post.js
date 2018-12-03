@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { css } from 'emotion'
 import dayjs from 'dayjs'
+import { stripHtml } from '../utils/stripHtml'
 
 import Layout from '../components/Layout'
 import Headline from '../components/longform/Headline'
@@ -17,6 +18,7 @@ import NotFound from '../components/longform/NotFound'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.dato.blogPost
+    const summary = stripHtml(post.shortSummary)
     const postDate = post.postDate
       ? dayjs(post.postDate).format('MMMM D YYYY')
       : ''
@@ -50,7 +52,7 @@ class BlogPostTemplate extends React.Component {
           meta={[
             {
               name: 'description',
-              content: post.shortSummary,
+              content: summary,
             },
           ]}
           title={`${post.title} | simonswiss`}

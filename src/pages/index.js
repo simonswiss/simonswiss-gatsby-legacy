@@ -4,6 +4,7 @@ import { css } from 'emotion'
 import dayjs from 'dayjs'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
+import { stripHtml } from '../utils/stripHtml'
 
 class Page extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Page extends React.Component {
     const { title } = dato.blogHub
     const posts = dato.allBlogPosts
     const postsList = posts.map(post => {
+      const strippedShortSummary = stripHtml(post.shortSummary)
       return (
         <li key={post.slug} className={css(tw`mb-8`)}>
           <ul className={css(tw`list-reset pa0 mb-2`)}>
@@ -32,10 +34,10 @@ class Page extends React.Component {
               {post.title}
             </Link>
           </h2>
-          <p
-            className={css(tw`mt0 mb-4 text-grey-darker`)}
-            dangerouslySetInnerHTML={{ __html: post.shortSummary }}
-          />
+          <p className={css(tw`mt0 mb-4 text-grey-darker`)}>
+            {strippedShortSummary}
+          </p>
+
           <Link to={`blog/${post.slug}`}>Read more</Link>
         </li>
       )
