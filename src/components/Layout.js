@@ -21,7 +21,9 @@ class Layout extends React.Component {
               <Social />
             </div>
           </aside>
-          <main className={styles.main}>{children}</main>
+          <main className={css(tw`md:w-full lg:w-2/3 lg:pl-16 max-w-md`)}>
+            {children}
+          </main>
         </div>
         <Footer />
       </div>
@@ -44,7 +46,7 @@ class Layout extends React.Component {
             tw`mt-4 sm:mt-16 mb-8 max-w-md mx-auto flex font-sans leading-normal px-4`
           )}
         >
-          <main className={styles.main}>{children}</main>
+          <main className={css(tw`max-w-md`)}>{children}</main>
         </div>
         <Footer />
       </div>
@@ -65,7 +67,6 @@ const styles = {
   sidebarContainer: css(
     tw`pr-12 max-w-sm lg:border-r lg:border-grey-lighter mb-8`
   ),
-  main: css(tw`md:w-full lg:w-2/3 lg:pl-16 max-w-md`),
 }
 
 injectGlobal`
