@@ -58,7 +58,37 @@ module.exports = {
         trackingId: `UA-22027845-1`,
       },
     },
-    `gatsby-plugin-feed`,
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             description
+    //             siteUrl
+    //             site_url: siteUrl
+    //           }
+    //         }
+    //       }`,
+    //     feeds: [
+    //       {
+    //         query: `
+    //         {
+    //           dato {
+    //             allBlogPosts(orderBy: [postDate_DESC]) {
+    //               title
+    //               shortSummary(markdown: true)
+    //               slug
+    //               postDate
+    //             }
+    //           }
+    //         `,
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
