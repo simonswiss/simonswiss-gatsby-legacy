@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
+import styled from 'react-emotion'
 import { css } from 'emotion'
 import dayjs from 'dayjs'
 import { stripHtml } from '../utils/stripHtml'
@@ -14,6 +15,16 @@ import PullQuote from '../components/longform/PullQuote'
 import Tweet from '../components/longform/Tweet'
 import Video from '../components/longform/Video'
 import NotFound from '../components/longform/NotFound'
+
+const IntroText = styled('div')`
+  p {
+    ${tw`text-xl text-grey-dark mb-8`};
+  }
+  a {
+    ${tw`text-grey-darker border-b border-grey-darker hover:border-b-2 no-underline`};
+  }
+`
+// introText: `${css(tw`text-xl text-grey-light`)} color: red;`,
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -46,7 +57,7 @@ class BlogPostTemplate extends React.Component {
     )
 
     return (
-      <Layout>
+      <Layout isArticle>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[
@@ -57,14 +68,16 @@ class BlogPostTemplate extends React.Component {
           ]}
           title={`${post.title} | simonswiss`}
         />
-        <h2 className={css(tw`text-3xl leading-tight`)}>{post.title}</h2>
-        <p className={css(tw`text-grey mb-6`)}>Posted on {postDate}</p>
-        <div
-          className={css(tw`text-xl text-grey-dark`)}
-          dangerouslySetInnerHTML={{ __html: post.shortSummary }}
-        />
-        <div className={css(tw`mt-6`)} />
-        {longFormPost}
+        <article className={css(tw`max-w-md`)}>
+          <h2 className={css(tw`text-3xl leading-tight`)}>{post.title}</h2>
+
+          <p className={css(tw`text-grey mb-6`)}>Posted on {postDate}</p>
+
+          <IntroText dangerouslySetInnerHTML={{ __html: post.shortSummary }} />
+
+          <div className={css(tw`mt-6`)} />
+          {longFormPost}
+        </article>
       </Layout>
     )
   }

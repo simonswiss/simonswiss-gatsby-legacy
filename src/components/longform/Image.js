@@ -1,11 +1,11 @@
 import React from 'react'
 import { css } from 'emotion'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 export default ({ block }) => (
-  <div className={css(tw`my-6`)}>
-    <Img
-      fixed={block.image}
+  <div className={css(tw`my-8`)}>
+    <img
+      src={block.image.url}
       className={css(tw`w-full shadow-lg rounded`)}
       alt={block.image.title}
     />
