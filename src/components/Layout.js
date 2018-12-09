@@ -11,14 +11,7 @@ class Layout extends React.Component {
   render() {
     const { location, children, isArticle } = this.props
 
-    const layout = isArticle ? (
-      <div className={styles.wrapper}>
-        <div>
-          <main className={styles.main}>{children}</main>
-        </div>
-        <Footer />
-      </div>
-    ) : (
+    const layoutMain = (
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <aside className={styles.sidebar}>
@@ -34,7 +27,31 @@ class Layout extends React.Component {
       </div>
     )
 
-    return layout
+    const layoutArticle = (
+      <div className={styles.wrapper}>
+        <div className={css(tw`max-w-xxl p-8`)}>
+          <Link
+            to="/"
+            className={css(
+              tw`no-underline hover:underline text-purple nuxt-link-active`
+            )}
+          >
+            &larr; back to blog
+          </Link>
+        </div>
+        <div
+          className={css(
+            tw`mt-4 sm:mt-16 mb-8 max-w-md mx-auto flex font-sans leading-normal px-4`
+          )}
+        >
+          <main className={styles.main}>{children}</main>
+        </div>
+        <Footer />
+      </div>
+    )
+
+    // Use the appropriate layout
+    return isArticle ? layoutArticle : layoutMain
   }
 }
 export default Layout
@@ -46,7 +63,7 @@ const styles = {
   ),
   sidebar: css(tw`md:w-full lg:w-1/3`),
   sidebarContainer: css(
-    tw`pr-12 max-w-sm md:border-r border-grey-lighter mb-8`
+    tw`pr-12 max-w-sm lg:border-r lg:border-grey-lighter mb-8`
   ),
   main: css(tw`md:w-full lg:w-2/3 lg:pl-16 max-w-md`),
 }
