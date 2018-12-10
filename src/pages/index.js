@@ -53,7 +53,7 @@ class Page extends React.Component {
                 "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
             },
           ]}
-          title="Blog | simonswiss"
+          title="simonswiss | Swiss front-end developer based in Sydney"
         />
         <article>
           <div className="cms">
