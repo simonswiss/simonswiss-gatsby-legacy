@@ -9,7 +9,8 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
-    'gatsby-plugin-emotion',
+    `gatsby-plugin-emotion`,
+    `gatsby-mdx`,
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -26,6 +27,20 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/content/posts/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'talks',
+        path: `${__dirname}/content/talks/`,
       },
     },
     {
