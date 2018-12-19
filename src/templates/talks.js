@@ -6,28 +6,39 @@ import { css } from 'emotion'
 import dayjs from 'dayjs'
 import { stripHtml } from '../utils/stripHtml'
 
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+
 import Layout from '../components/Layout'
 
-class PostTemplate extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[
-            {
-              name: 'description',
-              content: 'some stuff',
-            },
-          ]}
-          title="Hello"
-        />
-        <article className={css(tw`max-w-md`)}>
-          <p>Here is your TALK template!</p>
-        </article>
-      </Layout>
-    )
-  }
+export default function TalkTemplate(props) {
+  const { body } = props.data.mdx.code
+  return (
+    <Layout>
+      <Helmet
+        htmlAttributes={{ lang: 'en' }}
+        meta={[{ name: 'description', content: 'some stuff' }]}
+        title="Hello"
+      />
+      <article className={css(tw`max-w-md`)}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </article>
+    </Layout>
+  )
 }
 
-export default PostTemplate
+export const pageQuery = graphql`
+  query($id: String!) {
+    mdx(id: { eq: $id }) {
+      id
+      frontmatter {
+        title
+        path
+        postdate
+        intro
+      }
+      code {
+        body
+      }
+    }
+  }
+`

@@ -14,6 +14,14 @@ class Navigation extends React.Component {
             Blog
           </Link>
         </li>
+        <li className={css(tw`mb-1`)}>
+          <Link
+            className={css(tw`text-purple no-underline hover:underline`)}
+            to="/talks"
+          >
+            Talks
+          </Link>
+        </li>
 
         <li className={css(tw`mb-1`)}>
           <Link

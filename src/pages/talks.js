@@ -1,18 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Teaser from '../components/Teaser'
 import { css } from 'emotion'
 import dayjs from 'dayjs'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
+import Teaser from '../components/Teaser'
+import { stripHtml } from '../utils/stripHtml'
 
 export default props => {
-  const posts = props.data.allMdx.edges
-  const postsList = posts.map(post => {
+  const talks = props.data.allMdx.edges
+  console.log(talks)
+
+  const talksList = talks.map(post => {
     const { node } = post
     return (
       <Teaser
-        type="posts"
+        type="talks"
         key={node.id}
         title={node.frontmatter.title}
         path={node.frontmatter.path}
@@ -36,7 +39,7 @@ export default props => {
       />
       <article>
         <div className="cms">
-          <ul className={css(tw`list-reset`)}>{postsList}</ul>
+          <ul className={css(tw`list-reset`)}>{talksList}</ul>
         </div>
       </article>
     </Layout>
@@ -45,7 +48,7 @@ export default props => {
 
 export const pageQuery = graphql`
   query {
-    allMdx(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/talks/" } }) {
       edges {
         node {
           id
