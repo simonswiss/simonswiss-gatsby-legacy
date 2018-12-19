@@ -9,7 +9,7 @@ import Footer from './Footer'
 
 class Layout extends React.Component {
   render() {
-    const { location, children, isArticle } = this.props
+    const { location, children, isArticle, type } = this.props
 
     const layoutMain = (
       <div className={styles.wrapper}>
@@ -33,12 +33,12 @@ class Layout extends React.Component {
       <div className={styles.wrapper}>
         <div className={css(tw`max-w-xxl p-8`)}>
           <Link
-            to="/"
+            to={type === 'talks' ? '/talks' : '/'}
             className={css(
               tw`no-underline hover:underline text-purple nuxt-link-active`
             )}
           >
-            &larr; back to blog
+            &larr; {type === 'talks' ? 'See all talks' : 'Back to blog'}
           </Link>
         </div>
         <div

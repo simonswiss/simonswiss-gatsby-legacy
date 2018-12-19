@@ -45,7 +45,10 @@ export default props => {
 
 export const pageQuery = graphql`
   query {
-    allMdx(filter: { fileAbsolutePath: { regex: "/posts/" } }) {
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      sort: { order: DESC, fields: [frontmatter___postdate] }
+    ) {
       edges {
         node {
           id

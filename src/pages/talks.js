@@ -9,8 +9,6 @@ import { stripHtml } from '../utils/stripHtml'
 
 export default props => {
   const talks = props.data.allMdx.edges
-  console.log(talks)
-
   const talksList = talks.map(post => {
     const { node } = post
     return (
@@ -48,7 +46,10 @@ export default props => {
 
 export const pageQuery = graphql`
   query {
-    allMdx(filter: { fileAbsolutePath: { regex: "/talks/" } }) {
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/talks/" } }
+      sort: { order: DESC, fields: [frontmatter___postdate] }
+    ) {
       edges {
         node {
           id

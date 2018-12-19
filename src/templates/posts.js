@@ -11,9 +11,10 @@ import Layout from '../components/Layout'
 
 export default function PostTemplate(props) {
   const post = props.data.mdx
+  const type = post.parent.sourceInstanceName
   const { body } = post.code
   return (
-    <Layout>
+    <Layout isArticle type={type}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: 'some stuff' }]}
@@ -25,7 +26,10 @@ export default function PostTemplate(props) {
         </h2>
 
         <p className={css(tw`text-grey mb-6`)}>
-          Posted on {post.frontmatter.postdate}
+          Posted on{' '}
+          {post.frontmatter.postdate
+            ? dayjs(post.frontmatter.postdate).format('MMMM D YYYY')
+            : ''}
         </p>
         <div className={css(tw`mt-6`)} />
         <MDXRenderer>{body}</MDXRenderer>
@@ -41,6 +45,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         path
+        intro
+        postdate
+      }
+      parent {
+        ... on File {
+          sourceInstanceName
+        }
       }
       code {
         body

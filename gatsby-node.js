@@ -21,8 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
                 }
                 id
                 frontmatter {
-                  title
-                  _PARENT
                   path
                 }
                 code {
@@ -43,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: `/${type}/${node.frontmatter.path}`,
             component: componentWithMDXScope(
-              path.resolve(`./src/templates/${type}.js`),
+              path.resolve(`./src/templates/posts.js`),
               node.code.scope
             ),
             context: { id: node.id },
