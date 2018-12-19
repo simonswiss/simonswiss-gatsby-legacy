@@ -6,6 +6,7 @@ import { css } from 'emotion'
 import dayjs from 'dayjs'
 
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { withMDXScope } from 'gatsby-mdx/context'
 
 import Layout from '../components/Layout'
 

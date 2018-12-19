@@ -121,3 +121,12 @@ exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }) => {
     },
   })
 }
+
+// gatsby-node.js
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+  })
+}
