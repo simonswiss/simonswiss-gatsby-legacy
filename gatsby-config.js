@@ -8,7 +8,6 @@ module.exports = {
     description: 'Swiss front end designer & developer based in Sydney.',
     siteUrl: 'https://simonswiss.com/',
   },
-  pathPrefix: '/',
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-mdx`,
