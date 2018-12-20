@@ -6,7 +6,7 @@ module.exports = {
     title: 'simonswiss.com',
     author: 'Simon Vrachliotis',
     description: 'Swiss front end designer & developer based in Sydney.',
-    siteUrl: 'https://simonswiss.com/',
+    siteUrl: 'https://simonswiss.com',
   },
   plugins: [
     `gatsby-plugin-emotion`,
