@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -11,6 +12,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-mdx`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -25,22 +27,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
         name: 'pages',
+        path: path.join(__dirname, 'src', 'pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content/posts/`,
+        path: path.join(__dirname, 'content', 'posts'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'talks',
-        path: `${__dirname}/content/talks/`,
+        path: path.join(__dirname, 'content', 'talks'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
       },
     },
     {

@@ -6,10 +6,10 @@ const styles = css({
   maxWidth: 500,
 })
 
-export default ({ block }) => (
+export default ({ children }) => (
   <div className={styles + ' ' + css(tw`my-8`)}>
     <blockquote className="twitter-tweet" data-lang="en">
-      <div dangerouslySetInnerHTML={{ __html: block.tweet }} />
+      {children}
     </blockquote>
   </div>
 )

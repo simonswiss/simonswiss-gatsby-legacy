@@ -9,10 +9,10 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { MDXProvider } from '@mdx-js/tag'
 
 import Layout from '../components/Layout'
-import IntroText from 'components/IntroText'
+import Headline from 'components/longform/Headline'
 
 const components = {
-  //
+  h2: Headline,
 }
 
 export default function PostTemplate(props) {
