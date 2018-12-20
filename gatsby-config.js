@@ -14,17 +14,6 @@ module.exports = {
     `gatsby-mdx`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'DatoCMS',
-        fieldName: 'dato',
-        url: process.env.API_URL,
-        headers: {
-          Authorization: process.env.API_TOKEN,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'pages',
