@@ -8,7 +8,7 @@ module.exports = {
     description: 'Swiss front end designer & developer based in Sydney.',
     siteUrl: 'https://simonswiss.com/',
   },
-  pathPrefix: '',
+  pathPrefix: '/',
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-mdx`,
@@ -71,24 +71,6 @@ module.exports = {
         trackingId: `UA-22027845-1`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             title
-    //             description
-    //             siteUrl
-    //             site_url: siteUrl
-    //           }
-    //         }
-    //       }`,
-    //     feeds: [
-    //     ],
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
