@@ -86,19 +86,6 @@ module.exports = {
     //         }
     //       }`,
     //     feeds: [
-    //       {
-    //         query: `
-    //         {
-    //           dato {
-    //             allBlogPosts(orderBy: [postDate_DESC]) {
-    //               title
-    //               shortSummary(markdown: true)
-    //               slug
-    //               postDate
-    //             }
-    //           }
-    //         `,
-    //       },
     //     ],
     //   },
     // },

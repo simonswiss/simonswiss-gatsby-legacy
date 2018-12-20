@@ -52,53 +52,6 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
-
-//   return new Promise((resolve, reject) => {
-//     const blogPost = path.resolve('./src/templates/blog-post.js')
-//     resolve(
-//       graphql(
-//         `
-//           {
-//             dato {
-//               allBlogPosts {
-//                 title
-//                 shortSummary
-//                 slug
-//               }
-//             }
-//           }
-//         `
-//       ).then(result => {
-//         if (result.errors) {
-//           console.log(result.errors)
-//           reject(result.errors)
-//         }
-
-//         // Create blog posts pages.
-//         const posts = result.data.dato.allBlogPosts
-
-//         _.each(posts, (post, index) => {
-//           const previous =
-//             index === posts.length - 1 ? null : posts[index + 1].node
-//           const next = index === 0 ? null : posts[index - 1].node
-
-//           createPage({
-//             path: `blog/${post.slug}`,
-//             component: blogPost,
-//             context: {
-//               slug: post.slug,
-//               previous,
-//               next,
-//             },
-//           })
-//         })
-//       })
-//     )
-//   })
-// }
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
