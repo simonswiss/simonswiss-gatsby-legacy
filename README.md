@@ -1,11 +1,5 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# simonswiss.com website
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+The repo for the https://simonswiss.com website, built wiht `gatsby`, `gatsby-mdx`, `emotion` and `tailwindcss`.
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
-
-Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
-
-## Running in development
-`gatsby develop`
+This is a constant WIP, code might be a bit messy at places, but hey it works for me! 🤓
