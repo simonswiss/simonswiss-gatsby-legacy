@@ -7,9 +7,4 @@ const StyledP = styled.p`
     ${tw`px-2 text-purple-dark bg-purple-lightest no-underline py-1 hover:bg-purple hover:text-purple-lightest`};
   }
 `
-
-function IntroText({ children }) {
-  return <StyledP>{children}</StyledP>
-}
-
-export default IntroText
+export default ({ children }) => <StyledP>{children}</StyledP>

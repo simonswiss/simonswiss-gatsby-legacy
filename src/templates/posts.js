@@ -6,9 +6,14 @@ import { css } from 'emotion'
 import dayjs from 'dayjs'
 
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { withMDXScope } from 'gatsby-mdx/context'
+import { MDXProvider } from '@mdx-js/tag'
 
 import Layout from '../components/Layout'
+import IntroText from 'components/IntroText'
+
+const components = {
+  //
+}
 
 export default function PostTemplate(props) {
   const post = props.data.mdx
@@ -22,9 +27,9 @@ export default function PostTemplate(props) {
         title="Hello"
       />
       <article className={css(tw`max-w-md`)}>
-        <h2 className={css(tw`text-3xl leading-tight`)}>
+        <h1 className={css(tw`text-3xl leading-tight`)}>
           {post.frontmatter.title}
-        </h2>
+        </h1>
 
         <p className={css(tw`text-grey mb-6`)}>
           Posted on{' '}
@@ -33,7 +38,9 @@ export default function PostTemplate(props) {
             : ''}
         </p>
         <div className={css(tw`mt-6`)} />
-        <MDXRenderer>{body}</MDXRenderer>
+        <MDXProvider components={components}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
       </article>
     </Layout>
   )

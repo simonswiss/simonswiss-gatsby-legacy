@@ -5,10 +5,28 @@ postdate: '2016-07-23'
 intro: 'Today, Facebook developers have open sourced an awesome zero config React App generator tool. Here is my quick video overview on this fantastic new tool that should lower the entry barrier to beginners!'
 ---
 
-Today, Facebook developers have open sourced an awesome zero config React App generator tool, Create React App.
+import IntroText from 'components/IntroText'
+import Video from 'components/longform/Video'
+
+<IntroText>
+  Today, Facebook developers have open sourced an awesome zero config React App
+  generator tool,{' '}
+  <a href="https://github.com/facebook/create-react-app">Create React App</a>.
+</IntroText>
 
 One of the hardest hurdle to pass when learning React is the whole tooling ecosystem around it. Create React App hides away all of this and lets you focus just on React.
 
 Here’s my quick video overview on this fantastic new tool that should lower the entry barrier to beginners!
 
-You might want to also check Facebook’s official React blog post.
+<Video>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/JqCs1pdmf9o"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  />
+</Video>
+
+You might want to also check [Facebook’s official React blog post](https://reactjs.org/blog/2016/07/22/create-apps-with-no-configuration.html).

@@ -17,9 +17,6 @@ const styles = css({
   },
 })
 
-export default ({ block }) => (
-  <div
-    className={`${styles} ${utilities}`}
-    dangerouslySetInnerHTML={{ __html: block.embedCode }}
-  />
+export default ({ children }) => (
+  <div className={`${styles} ${utilities}`}>{children}</div>
 )

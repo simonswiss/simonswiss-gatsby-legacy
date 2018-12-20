@@ -43,10 +43,10 @@ class Layout extends React.Component {
         </div>
         <div
           className={css(
-            tw`mt-4 sm:mt-16 mb-8 max-w-md mx-auto flex font-sans leading-normal px-4`
+            tw`mt-4 sm:mt-16 mb-8 max-w-md w-full mx-auto flex font-sans leading-normal px-4`
           )}
         >
-          <main className={css(tw`max-w-md`)}>{children}</main>
+          <main>{children}</main>
         </div>
         <Footer />
       </div>
@@ -61,7 +61,7 @@ export default Layout
 const styles = {
   wrapper: css(tw`flex flex-col justify-between`),
   container: css(
-    tw`my-8 md:my-16 max-w-xl mx-auto px-6 lg:flex font-sans leading-normal`
+    tw`my-8 md:my-16 max-w-xl w-full mx-auto px-6 lg:flex font-sans leading-normal`
   ),
   sidebar: css(tw`md:w-full lg:w-1/3`),
   sidebarContainer: css(
@@ -351,12 +351,8 @@ table {
 html, body {
   ${tw`font-sans leading-normal`};
 }
-  a {
-  color: config("colors.purple");
-}
-
-a:hover {
-  color: config("colors.purple-dark");
+a {
+  ${tw`text-purple-dark hover:text-purple-darker`}
 }
 
 h1,
