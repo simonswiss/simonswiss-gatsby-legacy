@@ -1,11 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { css } from 'emotion'
-import dayjs from 'dayjs'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
 import Teaser from '../components/Teaser'
-import { stripHtml } from '../utils/stripHtml'
 
 export default props => {
   const talks = props.data.allMdx.edges
