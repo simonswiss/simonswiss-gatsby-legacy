@@ -25,8 +25,8 @@ export default ({ src, alt, caption, data }) => (
   <StaticQuery
     query={query}
     render={({ images }) => {
-      const image = images.edges.find(image =>
-        src.indexOf(image.node.relativePath)
+      const image = images.edges.find(
+        image => src.indexOf(image.node.relativePath) > -1
       )
       return (
         <div className={css(tw`my-8`)}>

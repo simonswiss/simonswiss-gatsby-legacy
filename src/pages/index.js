@@ -29,7 +29,7 @@ export default props => {
           {
             name: 'description',
             content:
-              "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
+              "Swiss front-end designer and developer based on Sydney's Northern Beaches. Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
           },
         ]}
         title="simonswiss | Swiss front-end developer based in Sydney"
