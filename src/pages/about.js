@@ -17,7 +17,7 @@ export default () => (
             "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
         },
       ]}
-      title="simonswiss | Swiss front-end developer based in Sydney"
+      title="About me: who am I and what can I do? | simonswiss.com"
     />
     <article>
       <h1

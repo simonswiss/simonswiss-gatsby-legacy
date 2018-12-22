@@ -15,7 +15,7 @@ class Page extends React.Component {
               content: 'Oops! We have a 404 Error!',
             },
           ]}
-          title="404 | simonswiss.com"
+          title="404: Page not found | simonswiss.com"
         />
         <article>
           <h1

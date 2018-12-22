@@ -24,7 +24,7 @@ export default function PostTemplate(props) {
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: post.frontmatter.intro }]}
-        title={`${post.frontmatter.title} | simonswiss`}
+        title={`${post.frontmatter.title} | ${type} | simonswiss`}
       />
       <article className={css(tw`max-w-md`)}>
         <h1 className={css(tw`text-3xl leading-tight`)}>

@@ -27,10 +27,10 @@ export default props => {
           {
             name: 'description',
             content:
-              "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
+              "Tech talks presented at conferences and meetups. I want to do more of this. Like my style and want me to speak at your event? Let's talk! :)",
           },
         ]}
-        title="simonswiss | Swiss front-end developer based in Sydney"
+        title="Public speaking: Tech meetup and conference talks | simonswiss.com"
       />
       <article>
         <div className="cms">

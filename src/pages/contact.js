@@ -11,10 +11,10 @@ export default () => (
         {
           name: 'description',
           content:
-            'I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Say hello in the live chat or send me an e-mail, don’t be shy!',
+            'I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Want to get in contact? Say hello, don’t be shy!',
         },
       ]}
-      title="Get in touch | simonswiss.com"
+      title="Contact: let's get in touch! | simonswiss.com"
     />
     <article>
       <h1
