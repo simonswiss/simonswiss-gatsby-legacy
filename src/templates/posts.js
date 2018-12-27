@@ -1,4 +1,5 @@
 import React from 'react'
+import Disqus from 'disqus-react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'react-emotion'
@@ -19,6 +20,14 @@ export default function PostTemplate(props) {
   const post = props.data.mdx
   const type = post.parent.sourceInstanceName
   const { body } = post.code
+
+  const disqusShortname = 'simonswiss-1'
+  const disqusConfig = {
+    url: props.location.href,
+    identifier: post.id,
+    title: post.frontmatter.title,
+  }
+
   return (
     <Layout isArticle type={type}>
       <Helmet
@@ -42,6 +51,12 @@ export default function PostTemplate(props) {
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </article>
+      <div className={css(tw`mt-12`)}>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
+      </div>
     </Layout>
   )
 }
