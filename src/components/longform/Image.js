@@ -37,7 +37,7 @@ export default ({ src, alt, caption, data }) => (
           />
 
           {caption && (
-            <p className={css(tw`mt-1 text-sm text-grey italic`)}>{caption}</p>
+            <p className={css(tw`mt-4 text-sm text-grey italic`)}>{caption}</p>
           )}
         </div>
       )
