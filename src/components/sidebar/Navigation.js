@@ -6,10 +6,9 @@ const NavLink = props => (
   <li className={css(tw`mb-1`)}>
     <Link
       to={props.to}
-      getProps={props => {
-        console.log('props', props)
+      getProps={({ isCurrent }) => {
         return {
-          className: props.isCurrent
+          className: isCurrent
             ? css(
                 tw`text-purple-darker no-underline inline-block border-b-2 border-purple-dark`
               )
