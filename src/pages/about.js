@@ -49,7 +49,13 @@ export default () => (
           <li>🙉 Utility-first CSS</li>
           <li>⚛️ React / Preact / VueJS / Nuxt / Gatsby</li>
           <li>🛠 Gulp / npm / webpack</li>
-          <li>⚡️ Page Speed & Performance</li>
+          <li>
+            ⚡️{' '}
+            <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fsimonswiss.com&tab=mobile">
+              Page Speed
+            </a>{' '}
+            & Performance
+          </li>
           <li>🐍 Snake-oil SEO</li>
           <li>🤓 GIT / command line</li>
         </ul>
