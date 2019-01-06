@@ -32,8 +32,13 @@ export default () => (
           interesting new projects.
         </p>
         <p>
-          I also teach front-end development on egghead.io and my YouTube
-          channel, so go check these out! :)
+          I also teach front-end development on{' '}
+          <a href="https://egghead.io/instructors/simon-vrachliotis">
+            egghead.io
+          </a>{' '}
+          and my{' '}
+          <a href="https://www.youtube.com/simonswissdev">YouTube channel</a>,
+          so go check these out! :)
         </p>
         <h3>My current skillset and weapons of choice:</h3>
         <ul>
