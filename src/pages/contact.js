@@ -27,7 +27,10 @@ export default () => (
           I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and
           reliable!
         </p>
-        <p>Send me an e-mail, don’t be shy!</p>
+        <p>
+          Send me <a href="mailto:simon@simonswiss.com">an e-mail</a>, don’t be
+          shy!
+        </p>
       </div>
     </article>
   </Layout>
