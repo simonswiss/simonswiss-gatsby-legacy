@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-mdx`,
     `gatsby-plugin-sitemap`,
     {
