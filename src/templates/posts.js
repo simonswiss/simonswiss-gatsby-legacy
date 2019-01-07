@@ -32,11 +32,16 @@ export default function PostTemplate(props) {
     <Layout isArticle type={type}>
       <Helmet
         htmlAttributes={{ lang: 'en' }}
-        meta={[{ name: 'description', content: post.frontmatter.intro }]}
+        meta={[
+          { name: 'description', content: post.frontmatter.intro },
+          { name: 'twitter:title', content: post.frontmatter.title },
+          { name: 'twitter:description', content: post.frontmatter.intro },
+          { property: 'og:title', content: post.frontmatter.title },
+          { property: 'og:description', content: post.frontmatter.intro },
+          { property: 'og:type', content: 'article' },
+        ]}
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
-      >
-        <meta property="og:type" content="article" />
-      </Helmet>
+      />
       <article className={css(tw`max-w-md`)}>
         <h1 className={css(tw`text-3xl leading-tight`)}>
           {post.frontmatter.title}
