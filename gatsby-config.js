@@ -7,6 +7,8 @@ module.exports = {
     author: 'Simon Vrachliotis',
     description: 'Swiss front end designer & developer based in Sydney.',
     siteUrl: 'https://simonswiss.com',
+    twitter: '@simonswiss',
+    logo: 'https://simonswiss.com/icons/icon-512x512.png',
   },
   plugins: [
     `gatsby-plugin-emotion`,

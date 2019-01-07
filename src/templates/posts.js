@@ -34,7 +34,9 @@ export default function PostTemplate(props) {
         htmlAttributes={{ lang: 'en' }}
         meta={[{ name: 'description', content: post.frontmatter.intro }]}
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
-      />
+      >
+        <meta property="og:type" content="article" />
+      </Helmet>
       <article className={css(tw`max-w-md`)}>
         <h1 className={css(tw`text-3xl leading-tight`)}>
           {post.frontmatter.title}
