@@ -1,8 +1,7 @@
 import React from 'react'
 import Disqus from 'disqus-react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import styled from 'react-emotion'
+import SEO from '../components/SEO'
+import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import dayjs from 'dayjs'
 
@@ -30,17 +29,9 @@ export default function PostTemplate(props) {
 
   return (
     <Layout isArticle type={type}>
-      <Helmet
-        htmlAttributes={{ lang: 'en' }}
-        meta={[
-          { name: 'description', content: post.frontmatter.intro },
-          { name: 'twitter:title', content: post.frontmatter.title },
-          { name: 'twitter:description', content: post.frontmatter.intro },
-          { property: 'og:title', content: post.frontmatter.title },
-          { property: 'og:description', content: post.frontmatter.intro },
-          { property: 'og:type', content: 'article' },
-        ]}
+      <SEO
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
+        description={post.frontmatter.intro}
       />
       <article className={css(tw`max-w-md`)}>
         <h1 className={css(tw`text-3xl leading-tight`)}>

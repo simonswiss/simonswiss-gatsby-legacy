@@ -2,23 +2,19 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import SEO from '../components/SEO'
 import { css } from 'emotion'
 
 import Layout from '../components/Layout'
 
 export default () => (
   <Layout>
-    <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      meta={[
-        {
-          name: 'description',
-          content:
-            "Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching.",
-        },
-      ]}
+    <SEO
       title="About me: who am I and what can I do? | simonswiss.com"
+      description="Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching."
+      isPage={true}
     />
+
     <article>
       <h1
         className={css(tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`)}

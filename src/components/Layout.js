@@ -15,7 +15,6 @@ class Layout extends React.Component {
 
     const layoutMain = (
       <div className={styles.wrapper}>
-        <SEO />
         <div className={styles.container}>
           <aside className={styles.sidebar}>
             <div className={styles.sidebarContainer}>
@@ -34,7 +33,6 @@ class Layout extends React.Component {
 
     const layoutArticle = (
       <div className={styles.wrapper}>
-        <SEO />
         <div className={css(tw`max-w-xxl p-8`)}>
           <Link
             to={type === 'talks' ? '/talks' : '/'}

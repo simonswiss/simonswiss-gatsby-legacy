@@ -1,20 +1,15 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Helmet from 'react-helmet'
+import SEO from '../components/SEO'
 import { css } from 'emotion'
 
 export default () => (
   <Layout>
-    <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      meta={[
-        {
-          name: 'description',
-          content:
-            'I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Want to get in contact? Say hello, don’t be shy!',
-        },
-      ]}
+    <SEO
       title="Contact: let's get in touch! | simonswiss.com"
+      description="I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Want to get in contact? Say hello, don’t be shy!"
+      isPage={true}
     />
     <article>
       <h1

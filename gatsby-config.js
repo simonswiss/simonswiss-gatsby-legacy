@@ -13,8 +13,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-mdx`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-mdx`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

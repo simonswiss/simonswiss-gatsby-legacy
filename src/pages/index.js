@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Teaser from '../components/Teaser'
 import { css } from 'emotion'
-import dayjs from 'dayjs'
-import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 export default props => {
   const posts = props.data.allMdx.edges
@@ -23,16 +21,10 @@ export default props => {
   })
   return (
     <Layout>
-      <Helmet
-        htmlAttributes={{ lang: 'en' }}
-        meta={[
-          {
-            name: 'description',
-            content:
-              'Thoughts and personal experiences on front end development, and sometimes blogging about other stuff!',
-          },
-        ]}
+      <SEO
         title="Blog posts | simonswiss.com"
+        description="Thoughts and personal experiences on front end development, and sometimes blogging about other stuff!"
+        isPage={true}
       />
       <article>
         <div className="cms">
