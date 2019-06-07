@@ -1,8 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
-import { css, injectGlobal } from 'emotion'
+import { jsx, css, Global } from '@emotion/core'
 import { Link } from 'gatsby'
-
-import SEO from './SEO'
 
 import Navigation from './sidebar/Navigation'
 import Bio from './sidebar/Bio'
@@ -11,42 +10,41 @@ import Footer from './Footer'
 
 class Layout extends React.Component {
   render() {
-    const { location, children, isArticle, type } = this.props
+    const { children, isArticle, type } = this.props
 
     const layoutMain = (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <aside className={styles.sidebar}>
-            <div className={styles.sidebarContainer}>
-              <Bio />
-              <Navigation />
-              <Social />
-            </div>
-          </aside>
-          <main className={css(tw`md:w-full lg:w-2/3 lg:pl-16 max-w-md`)}>
-            {children}
-          </main>
+      <React.Fragment>
+        <Global styles={globalStyles} />
+        <div css={styles.wrapper}>
+          <div css={styles.container}>
+            <aside css={styles.sidebar}>
+              <div css={styles.sidebarContainer}>
+                <Bio />
+                <Navigation />
+                <Social />
+              </div>
+            </aside>
+            <main css={tw`md:w-full lg:w-2/3 lg:pl-16 max-w-md`}>
+              {children}
+            </main>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </React.Fragment>
     )
 
     const layoutArticle = (
-      <div className={styles.wrapper}>
-        <div className={css(tw`max-w-xxl p-8`)}>
+      <div css={styles.wrapper}>
+        <div css={tw`max-w-xxl p-8`}>
           <Link
             to={type === 'talks' ? '/talks' : '/'}
-            className={css(
-              tw`no-underline hover:underline text-purple nuxt-link-active`
-            )}
+            css={tw`no-underline hover:underline text-purple nuxt-link-active`}
           >
             &larr; {type === 'talks' ? 'See all talks' : 'Back to blog'}
           </Link>
         </div>
         <div
-          className={css(
-            tw`mt-4 sm:mt-16 mb-8 max-w-md w-full mx-auto flex font-sans leading-normal px-4`
-          )}
+          css={tw`mt-4 sm:mt-16 mb-8 max-w-md w-full mx-auto flex font-sans leading-normal px-4`}
         >
           <main>{children}</main>
         </div>
@@ -61,342 +59,333 @@ class Layout extends React.Component {
 export default Layout
 
 const styles = {
-  wrapper: css(tw`flex flex-col justify-between`),
-  container: css(
-    tw`my-8 md:my-16 max-w-xl w-full mx-auto px-6 lg:flex font-sans leading-normal`
-  ),
-  sidebar: css(tw`md:w-full lg:w-1/3`),
-  sidebarContainer: css(
-    tw`pr-12 max-w-sm lg:border-r lg:border-grey-lighter mb-8`
-  ),
+  wrapper: tw`flex flex-col justify-between`,
+  container: tw`my-8 md:my-16 max-w-xl w-full mx-auto px-6 lg:flex font-sans leading-normal`,
+  sidebar: tw`md:w-full lg:w-1/3`,
+  sidebarContainer: tw`pr-12 max-w-sm lg:border-r lg:border-grey-lighter mb-8`,
 }
 
-injectGlobal`
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
+const globalStyles = css`
+  html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
 
-body {
-  margin: 0;
-}
+  body {
+    margin: 0;
+  }
 
-h1 {
-  font-size: 2em;
-  margin: .67em 0;
-}
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
 
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
 
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
 
-a {
-  background-color: transparent;
-}
+  a {
+    background-color: transparent;
+  }
 
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
-}
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted; /* 2 */
+  }
 
-b,
-strong {
-  font-weight: bolder;
-}
+  b,
+  strong {
+    font-weight: bolder;
+  }
 
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
 
-small {
-  font-size: 80%;
-}
+  small {
+    font-size: 80%;
+  }
 
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
 
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
+  sub {
+    bottom: -0.25em;
+  }
 
-sub {
-  bottom: -0.25em;
-}
+  sup {
+    top: -0.5em;
+  }
 
-sup {
-  top: -0.5em;
-}
+  img {
+    border-style: none;
+  }
 
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
 
-img {
-  border-style: none;
-}
+  button,
+  input {
+    /* 1 */
+    overflow: visible;
+  }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
+  button,
+  select {
+    /* 1 */
+    text-transform: none;
+  }
 
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+  }
 
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
+  button::-moz-focus-inner,
+  [type='button']::-moz-focus-inner,
+  [type='reset']::-moz-focus-inner,
+  [type='submit']::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
 
+  button:-moz-focusring,
+  [type='button']:-moz-focusring,
+  [type='reset']:-moz-focusring,
+  [type='submit']:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
 
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
+  progress {
+    vertical-align: baseline;
+  }
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
+  textarea {
+    overflow: auto;
+  }
 
-fieldset {
-  padding: .35em .75em .625em;
-}
+  [type='checkbox'],
+  [type='radio'] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
 
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
+  [type='number']::-webkit-inner-spin-button,
+  [type='number']::-webkit-outer-spin-button {
+    height: auto;
+  }
 
-progress {
-  vertical-align: baseline;
-}
+  [type='search'] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
 
-textarea {
-  overflow: auto;
-}
+  [type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
 
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
 
   details {
-  display: block;
-}
+    display: block;
+  }
 
-summary {
-  display: list-item;
-}
+  summary {
+    display: list-item;
+  }
 
-template {
-  display: none;
-}
+  template {
+    display: none;
+  }
 
-[hidden] {
-  display: none;
-}
+  [hidden] {
+    display: none;
+  }
 
-html {
-  box-sizing: border-box; /* 1 */
-  font-family: sans-serif; /* 2 */
-}
+  html {
+    box-sizing: border-box; /* 1 */
+    font-family: sans-serif; /* 2 */
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-figure,
-p,
-pre {
-  margin: 0;
-}
+  blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  figure,
+  p,
+  pre {
+    margin: 0;
+  }
 
-button {
-  background: transparent;
-  padding: 0;
-}
+  button {
+    background: transparent;
+    padding: 0;
+  }
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
+  button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 
-fieldset {
-  margin: 0;
-  padding: 0;
-}
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
 
-ol,
-ul {
-  margin: 0;
-}
-*,
-*::before,
-*::after {
-  border-width: 0;
-  border-style: solid;
-  border-color: #dae1e7;
-}
+  ol,
+  ul {
+    margin: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: #dae1e7;
+  }
 
-img {
-  border-style: solid;
-}
+  img {
+    border-style: solid;
+  }
 
-textarea {
-  resize: vertical;
-}
+  textarea {
+    resize: vertical;
+  }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: .5;
-}
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
 
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  color: inherit;
-  opacity: .5;
-}
+  input::-ms-input-placeholder,
+  textarea::-ms-input-placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
 
-input::placeholder,
-textarea::placeholder {
-  color: inherit;
-  opacity: .5;
-}
+  input::placeholder,
+  textarea::placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
 
-button,
-[role="button"] {
-  cursor: pointer;
-}
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
 
-table {
-  border-collapse: collapse;
-}
+  table {
+    border-collapse: collapse;
+  }
 
-html, body {
-  ${tw`font-sans leading-normal`};
-}
-a {
-  ${tw`text-purple-dark hover:text-purple-darker`}
-}
+  html,
+  body {
+    ${tw`font-sans leading-normal`};
+  }
+  a {
+    ${tw`text-purple-dark hover:text-purple-darker`}
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  ${tw`text-grey-darkest`};
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    ${tw`text-grey-darkest`};
+  }
 
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a {
-  ${tw`text-grey-darkest`};
-}
+  h1 > a,
+  h2 > a,
+  h3 > a,
+  h4 > a {
+    ${tw`text-grey-darkest`};
+  }
 
-h1 > a:hover,
-h2 > a:hover,
-h3 > a:hover,
-h4 > a:hover {
-  ${tw`text-grey-darkest`};
-}
+  h1 > a:hover,
+  h2 > a:hover,
+  h3 > a:hover,
+  h4 > a:hover {
+    ${tw`text-grey-darkest`};
+  }
 
-h1,
-h2 {
-  ${tw`font-black`};
-}
+  h1,
+  h2 {
+    ${tw`font-black`};
+  }
 
-article ul,
-article ol,
-article h2,
-article h3,
-article h4 {
-  ${tw`mb-6`};
-}
+  article ul,
+  article ol,
+  article h2,
+  article h3,
+  article h4 {
+    ${tw`mb-6`};
+  }
 
-article p {
-  ${tw`my-4`};
-}
+  article p {
+    ${tw`my-4`};
+  }
 
-article p,
-article li {
-  ${tw`text-grey-darkest`};
-}
+  article p,
+  article li {
+    ${tw`text-grey-darkest`};
+  }
 `

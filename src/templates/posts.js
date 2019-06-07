@@ -1,15 +1,14 @@
-import React from 'react'
+/** @jsx jsx */
 import Disqus from 'disqus-react'
-import SEO from '../components/SEO'
+import { jsx } from '@emotion/core'
 import { graphql } from 'gatsby'
-import { css } from 'emotion'
 import dayjs from 'dayjs'
-
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import { MDXProvider } from '@mdx-js/tag'
 
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
-import Headline from 'components/longform/Headline'
+import Headline from '../components/longform/Headline'
 
 const components = {
   h2: Headline,
@@ -33,23 +32,21 @@ export default function PostTemplate(props) {
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
         description={post.frontmatter.intro}
       />
-      <article className={css(tw`max-w-md`)}>
-        <h1 className={css(tw`text-3xl leading-tight`)}>
-          {post.frontmatter.title}
-        </h1>
+      <article css={tw`max-w-md`}>
+        <h1 css={tw`text-3xl leading-tight`}>{post.frontmatter.title}</h1>
 
-        <p className={css(tw`text-grey mb-6`)}>
+        <p css={tw`text-grey mb-6`}>
           Posted on{' '}
           {post.frontmatter.postdate
             ? dayjs(post.frontmatter.postdate).format('MMMM D YYYY')
             : ''}
         </p>
-        <div className={css(tw`mt-6`)} />
+        <div css={tw`mt-6`} />
         <MDXProvider components={components}>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </article>
-      <div className={css(tw`mt-12`)}>
+      <div css={tw`mt-12`}>
         <Disqus.DiscussionEmbed
           shortname={disqusShortname}
           config={disqusConfig}
