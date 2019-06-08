@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/Layout'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import Helmet from 'react-helmet'
+
+import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { css } from 'emotion'
 
 export default () => (
   <Layout>
@@ -12,12 +13,10 @@ export default () => (
       isPage={true}
     />
     <article>
-      <h1
-        className={css(tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`)}
-      >
+      <h1 css={tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`}>
         Let's have a chat!
       </h1>
-      <div className="cms">
+      <div>
         <p>
           I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and
           reliable!

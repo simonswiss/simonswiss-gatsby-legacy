@@ -1,13 +1,13 @@
-import React from 'react'
-import { css } from 'emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 
-const styles = css({
+const styles = {
   width: 'calc(100vw - 3rem)',
   maxWidth: 500,
-})
+}
 
 export default ({ children }) => (
-  <div className={styles + ' ' + css(tw`my-8`)}>
+  <div css={[tw`my-8`, styles]}>
     <blockquote className="twitter-tweet" data-lang="en">
       {children}
     </blockquote>

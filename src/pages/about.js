@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import SEO from '../components/SEO'
-import { css } from 'emotion'
 
+import { Link, graphql } from 'gatsby'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 
 export default () => (
@@ -16,12 +16,10 @@ export default () => (
     />
 
     <article>
-      <h1
-        className={css(tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`)}
-      >
+      <h1 css={tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`}>
         Nice to meet you!
       </h1>
-      <div className="cms">
+      <div>
         <p>
           I enjoy writing clean frontend code and building good, human
           relationships. I love my work and am always on the lookout for

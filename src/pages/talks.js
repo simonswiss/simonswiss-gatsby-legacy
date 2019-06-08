@@ -1,5 +1,6 @@
-import React from 'react'
-import { css } from 'emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
+
 import Layout from '../components/Layout'
 import Teaser from '../components/Teaser'
 import SEO from '../components/SEO'
@@ -27,8 +28,8 @@ export default props => {
         isPage={true}
       />
       <article>
-        <div className="cms">
-          <ul className={css(tw`list-reset`)}>{talksList}</ul>
+        <div>
+          <ul css={tw`list-reset`}>{talksList}</ul>
         </div>
       </article>
     </Layout>
