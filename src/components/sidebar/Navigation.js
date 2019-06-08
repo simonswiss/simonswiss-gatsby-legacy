@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React from 'react'
 import { Link } from 'gatsby'
 
 const Navigation = () => (
@@ -16,13 +15,8 @@ const NavLink = props => (
   <li css={tw`mb-1`}>
     <Link
       to={props.to}
-      getProps={({ isCurrent }) => {
-        return {
-          css: isCurrent
-            ? tw`text-purple-darker no-underline inline-block border-b-2 border-purple-dark`
-            : tw`text-purple no-underline inline-block border-b-2 border-transparent`,
-        }
-      }}
+      style={tw`text-purple no-underline inline-block border-b-2 border-transparent`}
+      activeStyle={tw`text-purple-darker no-underline inline-block border-b-2 border-purple-dark`}
     >
       {props.children}
     </Link>

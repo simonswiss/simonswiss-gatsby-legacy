@@ -34,22 +34,25 @@ class Layout extends React.Component {
     )
 
     const layoutArticle = (
-      <div css={styles.wrapper}>
-        <div css={tw`max-w-xxl p-8`}>
-          <Link
-            to={type === 'talks' ? '/talks' : '/'}
-            css={tw`no-underline hover:underline text-purple nuxt-link-active`}
+      <React.Fragment>
+        <Global styles={globalStyles} />
+        <div css={styles.wrapper}>
+          <div css={tw`max-w-xxl p-8`}>
+            <Link
+              to={type === 'talks' ? '/talks' : '/'}
+              css={tw`no-underline hover:underline text-purple nuxt-link-active`}
+            >
+              &larr; {type === 'talks' ? 'See all talks' : 'Back to blog'}
+            </Link>
+          </div>
+          <div
+            css={tw`mt-4 sm:mt-16 mb-8 max-w-md w-full mx-auto flex font-sans leading-normal px-4`}
           >
-            &larr; {type === 'talks' ? 'See all talks' : 'Back to blog'}
-          </Link>
+            <main>{children}</main>
+          </div>
+          <Footer />
         </div>
-        <div
-          css={tw`mt-4 sm:mt-16 mb-8 max-w-md w-full mx-auto flex font-sans leading-normal px-4`}
-        >
-          <main>{children}</main>
-        </div>
-        <Footer />
-      </div>
+      </React.Fragment>
     )
 
     // Use the appropriate layout

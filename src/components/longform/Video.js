@@ -1,8 +1,9 @@
-import React from 'react'
-import { css } from 'emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 
-const utilities = css(tw`my-8`)
-const styles = css({
+export default ({ children }) => <div css={[tw`my-8`, styles]}>{children}</div>
+
+const styles = {
   position: 'relative',
   paddingBottom: '56.25%',
   height: 0,
@@ -15,8 +16,4 @@ const styles = css({
     width: '100%',
     height: '100%',
   },
-})
-
-export default ({ children }) => (
-  <div className={`${styles} ${utilities}`}>{children}</div>
-)
+}

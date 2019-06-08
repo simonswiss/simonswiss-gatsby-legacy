@@ -1,8 +1,20 @@
-import React from 'react'
-import { css } from 'emotion'
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 
-const utilities = css(tw`my-8`)
-const styles = css({
+export default ({ id }) => (
+  <div css={[tw`my-8`, styles]}>
+    <iframe
+      width="560"
+      height="315"
+      src={`https://www.youtube.com/embed/${id}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+)
+
+const styles = {
   position: 'relative',
   paddingBottom: '56.25%',
   height: 0,
@@ -15,17 +27,4 @@ const styles = css({
     width: '100%',
     height: '100%',
   },
-})
-
-export default ({ id }) => (
-  <div className={`${styles} ${utilities}`}>
-    <iframe
-      width="560"
-      height="315"
-      src={`https://www.youtube.com/embed/${id}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-  </div>
-)
+}
