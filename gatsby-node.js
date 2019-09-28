@@ -1,10 +1,8 @@
-const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 // gatsby-node.js
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
@@ -23,9 +21,6 @@ exports.createPages = ({ graphql, actions }) => {
                 frontmatter {
                   path
                 }
-                code {
-                  scope
-                }
               }
             }
           }
@@ -40,10 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
           const type = node.parent.sourceInstanceName
           createPage({
             path: `/${type}/${node.frontmatter.path}`,
-            component: componentWithMDXScope(
-              path.resolve(`./src/templates/posts.js`),
-              node.code.scope
-            ),
+            component: path.resolve(`./src/templates/posts.js`),
             context: { id: node.id },
           })
         })
@@ -69,7 +61,7 @@ exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }) => {
   setBabelPlugin({
     name: 'babel-plugin-tailwind-components',
     options: {
-      config: './tailwind.js',
+      config: './tailwind.config.js',
       format: 'auto',
     },
   })
@@ -80,6 +72,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    },
+    // Make tailwind.macro work..
+    node: {
+      fs: 'empty',
     },
   })
 }

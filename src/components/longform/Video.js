@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 export default ({ children }) => <div css={[tw`my-8`, styles]}>{children}</div>
 

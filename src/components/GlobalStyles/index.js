@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css, Global } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 export default () => (
   <Global
@@ -281,28 +282,28 @@ export default () => (
         ${tw`font-sans leading-normal`};
       }
       a {
-        ${tw`text-purple-dark hover:text-purple-darker`}
+        ${tw`text-purple-600 hover:text-purple-800`}
       }
 
       h1,
       h2,
       h3,
       h4 {
-        ${tw`text-grey-darkest`};
+        ${tw`text-gray-800`};
       }
 
       h1 > a,
       h2 > a,
       h3 > a,
       h4 > a {
-        ${tw`text-grey-darkest`};
+        ${tw`text-gray-800`};
       }
 
       h1 > a:hover,
       h2 > a:hover,
       h3 > a:hover,
       h4 > a:hover {
-        ${tw`text-grey-darkest`};
+        ${tw`text-gray-800`};
       }
 
       h1,
@@ -324,7 +325,7 @@ export default () => (
 
       article p,
       article li {
-        ${tw`text-grey-darkest`};
+        ${tw`text-gray-700`};
       }
     `}
   />

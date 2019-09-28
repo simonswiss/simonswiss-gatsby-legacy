@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 export default ({ id }) => (
   <div css={[tw`my-8`, styles]}>
     <iframe
+      title="vimeo player"
       src={`https://player.vimeo.com/video/${id}`}
       width="640"
       height="360"

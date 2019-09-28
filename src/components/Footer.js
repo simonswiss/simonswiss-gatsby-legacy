@@ -1,11 +1,18 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 
-export default () => (
-  <footer css={tw`max-w-lg mx-auto px-4 my-8 w-full`}>
-    <p css={tw`text-grey-darker`}>
-      Built with 😍, <a href="https://www.gatsbyjs.org/">Gatsby</a> and{' '}
+const Footer = () => (
+  <footer css={tw`max-w-4xl mx-auto px-4 my-8 w-full`}>
+    <p css={tw`text-gray-700`}>
+      Built with{' '}
+      <span role="img" aria-label="emoji">
+        😍
+      </span>
+      , <a href="https://www.gatsbyjs.org/">Gatsby</a> and{' '}
       <a href="https://tailwindcss.com">Tailwind CSS</a>.
     </p>
   </footer>
 )
+
+export default Footer

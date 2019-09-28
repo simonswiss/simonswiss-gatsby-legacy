@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import Helmet from 'react-helmet'
+import tw from 'tailwind.macro'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -18,8 +18,11 @@ export default () => (
       </h1>
       <div>
         <p>
-          I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and
-          reliable!
+          I am friendly.{' '}
+          <span role="img" aria-label="emoji">
+            👋
+          </span>{' '}
+          And Swiss. 🇨🇭 Which means I am both nice and reliable!
         </p>
         <p>
           Send me <a href="mailto:simon@simonswiss.com">an e-mail</a>, don’t be
