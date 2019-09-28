@@ -57,16 +57,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }) => {
-  setBabelPlugin({
-    name: 'babel-plugin-tailwind-components',
-    options: {
-      config: './tailwind.config.js',
-      format: 'auto',
-    },
-  })
-}
-
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

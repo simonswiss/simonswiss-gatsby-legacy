@@ -2,6 +2,12 @@
 import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
+export const IconLink = ({ title, url, icon }) => (
+  <a css={tw`text-gray-500 mr-2 hover:text-gray-600`} href={url} title={title}>
+    {icon}
+  </a>
+)
+
 export const LinkedInSvg = () => (
   <svg
     css={tw`h-4 w-4`}

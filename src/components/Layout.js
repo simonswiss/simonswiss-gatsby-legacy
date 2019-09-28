@@ -8,7 +8,7 @@ import { Link } from 'gatsby'
 import GlobalStyles from '../components/GlobalStyles'
 import Navigation from './sidebar/Navigation'
 import Bio from './sidebar/Bio'
-import Social from './sidebar/Social'
+import SocialLinksList from './sidebar/SocialLinksList'
 import Footer from './Footer'
 
 class Layout extends React.Component {
@@ -38,7 +38,7 @@ const LayoutMain = ({ children }) => (
         <div css={tw`pr-12 max-w-sm lg:border-r lg:border-gray-200 mb-8`}>
           <Bio />
           <Navigation />
-          <Social />
+          <SocialLinksList />
         </div>
       </aside>
       <main css={tw`md:w-full lg:w-2/3 lg:pl-16 max-w-xl`}>{children}</main>
