@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 
 const styles = {
   width: 'calc(100vw - 3rem)',

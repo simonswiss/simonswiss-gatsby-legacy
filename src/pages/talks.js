@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Teaser from '../components/Teaser'
@@ -29,7 +31,7 @@ export default props => {
       />
       <article>
         <div>
-          <ul css={tw`list-reset`}>{talksList}</ul>
+          <ul css={tw`list-none p-0`}>{talksList}</ul>
         </div>
       </article>
     </Layout>

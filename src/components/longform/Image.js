@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -18,7 +19,7 @@ export default ({ src, alt, caption, data }) => (
             alt={alt}
           />
 
-          {caption && <p css={tw`mt-4 text-sm text-grey italic`}>{caption}</p>}
+          {caption && <p css={tw`mt-4 text-sm text-gray italic`}>{caption}</p>}
         </div>
       )
     }}

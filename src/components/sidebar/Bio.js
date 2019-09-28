@@ -1,6 +1,6 @@
-/** @jx jsx */
-import React from 'react'
+/** @jsx jsx */
 import { jsx } from '@emotion/core'
+import tw from 'tailwind.macro'
 import { Link } from 'gatsby'
 
 const Bio = () => (
@@ -27,19 +27,11 @@ const Bio = () => (
       <h2 css={tw`my-3 leading-tight font-bold`}>Simon Vrachliotis</h2>
     </div>
 
-    <p css={tw`text-grey-darker mt-4 md:mt-0 mb-8`}>
+    <p css={tw`text-gray-700 mt-4 md:mt-0 mb-8`}>
       Swiss front-end designer and developer based on Sydney's Northern Beaches.
       Proud father of two. Surf, basketball, ukulele. Love learning, love
       teaching - doing both with{' '}
-      <a
-        css={`
-          text-purpleno-underline hover: underline;
-        `}
-        href="https://thinkmill.com.au"
-      >
-        Thinkmill
-      </a>
-      .
+      <a href="https://thinkmill.com.au">Thinkmill</a>.
     </p>
   </div>
 )

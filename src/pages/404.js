@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import Helmet from 'react-helmet'
+import tw from 'tailwind.macro'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'

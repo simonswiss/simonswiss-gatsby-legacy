@@ -14,9 +14,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-mdx`,
-    },
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
