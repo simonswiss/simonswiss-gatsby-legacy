@@ -38,7 +38,7 @@ export default function PostTemplate(props) {
       <article css={tw`max-w-2xl`}>
         <h1 css={tw`text-3xl leading-tight`}>{post.frontmatter.title}</h1>
 
-        <p css={tw`mb-6`}>
+        <p css={tw`mb-6 uppercase tracking-wider text-sm text-gray-500`}>
           Posted on{' '}
           {post.frontmatter.postdate
             ? dayjs(post.frontmatter.postdate).format('MMMM D YYYY')
