@@ -58,14 +58,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 // gatsby-node.js
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
-    // Make tailwind.macro work..
-    node: {
-      fs: 'empty',
-    },
   })
+  // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
+  // https://github.com/bradlc/babel-plugin-tailwind-components/issues/39#issuecomment-526892633
+  const config = getConfig()
+  config.node = {
+    fs: 'empty',
+  }
 }

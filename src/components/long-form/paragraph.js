@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default ({ block }) => (
+export const Paragraph = ({ block }) => (
   <div dangerouslySetInnerHTML={{ __html: block.body }} />
 )

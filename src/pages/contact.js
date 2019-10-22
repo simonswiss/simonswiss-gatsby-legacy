@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import React from 'react'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Headline from '../components/headline'
 
 export default () => (
   <Layout>
@@ -13,9 +11,7 @@ export default () => (
       isPage={true}
     />
     <article>
-      <h1 css={tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`}>
-        Let's have a chat!
-      </h1>
+      <Headline>Let's have a chat!</Headline>
       <div>
         <p>
           I am friendly.{' '}

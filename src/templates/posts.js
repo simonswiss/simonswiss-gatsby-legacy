@@ -1,17 +1,15 @@
 /** @jsx jsx */
-import Disqus from 'disqus-react'
 import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
-
+import Disqus from 'disqus-react'
 import { graphql } from 'gatsby'
 import dayjs from 'dayjs'
-
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import SEO from '../components/SEO'
-import Layout from '../components/Layout'
-import Headline from '../components/longform/Headline'
+import SEO from '../components/seo'
+import Layout from '../components/layout'
+import { Headline } from '../components/long-form'
 
 const components = {
   h2: Headline,

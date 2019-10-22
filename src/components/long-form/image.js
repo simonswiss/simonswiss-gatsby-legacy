@@ -4,7 +4,7 @@ import tw from 'tailwind.macro'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default ({ src, alt, caption, data }) => (
+export const Image = ({ src, alt, caption, data }) => (
   <StaticQuery
     query={query}
     render={({ images }) => {

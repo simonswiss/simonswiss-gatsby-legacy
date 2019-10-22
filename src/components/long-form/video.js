@@ -2,21 +2,6 @@
 import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
-export default ({ id }) => (
-  <div css={[tw`my-8`, styles]}>
-    <iframe
-      title="vimeo player"
-      src={`https://player.vimeo.com/video/${id}`}
-      width="640"
-      height="360"
-      frameBorder="0"
-      webkitAllowFullScreen
-      mozAllowFullScreen
-      allowFullScreen
-    />
-  </div>
-)
-
 const styles = {
   position: 'relative',
   paddingBottom: '56.25%',
@@ -31,3 +16,7 @@ const styles = {
     height: '100%',
   },
 }
+
+export const Video = ({ children }) => (
+  <div css={[tw`my-8`, styles]}>{children}</div>
+)

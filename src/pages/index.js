@@ -3,9 +3,9 @@ import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 import { graphql } from 'gatsby'
 
-import Teaser from '../components/Teaser'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import Teaser from '../components/teaser'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default props => {
   const posts = props.data.allMdx.edges

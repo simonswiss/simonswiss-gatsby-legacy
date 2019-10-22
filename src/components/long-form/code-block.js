@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({ block }) => (
+export const CodeBlock = ({ block }) => (
   <pre>
     <code>{block.codeBlock}</code>
   </pre>

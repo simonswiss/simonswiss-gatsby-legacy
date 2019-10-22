@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
 
-export default ({ id }) => (
+export const YouTube = ({ id }) => (
   <div css={[tw`my-8`, styles]}>
     <iframe
       title="youtube player"

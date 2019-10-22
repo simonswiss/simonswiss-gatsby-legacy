@@ -5,11 +5,11 @@ import tw from 'tailwind.macro'
 
 import { Link } from 'gatsby'
 
-import GlobalStyles from '../components/GlobalStyles'
-import Navigation from './sidebar/Navigation'
-import Bio from './sidebar/Bio'
-import SocialLinksList from './sidebar/SocialLinksList'
-import Footer from './Footer'
+import GlobalStyles from '../global-styles'
+import Navigation from '../navigation'
+import Bio from '../bio'
+import SocialLinksList from '../social-icons'
+import Footer from '../footer/'
 
 class Layout extends React.Component {
   render() {
