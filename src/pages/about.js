@@ -2,11 +2,11 @@ import React from 'react'
 
 import Headline from '../components/headline'
 import Layout from '../components/layout'
-import { Seo } from '../components/seo'
+import SEO from '../components/seo'
 
 export default () => (
   <Layout>
-    <Seo
+    <SEO
       title="About me: who am I and what can I do? | simonswiss.com"
       description="Swiss front-end designer and developer based on Sydney's Northern Beaches.Proud father of two.Surf, basketball, ukulele.Love learning, love teaching."
       isPage={true}

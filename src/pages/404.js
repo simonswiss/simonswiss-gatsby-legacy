@@ -2,11 +2,11 @@ import React from 'react'
 
 import Headline from '../components/headline'
 import Layout from '../components/layout'
-import { Seo } from '../components/seo'
+import SEO from '../components/seo'
 
 const Page = () => (
   <Layout>
-    <Seo
+    <SEO
       title="404: Page not found | simonswiss.com"
       description="Oops! We have a 404 Error!"
       isPage={true}
