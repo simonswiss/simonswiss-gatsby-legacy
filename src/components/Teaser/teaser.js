@@ -18,7 +18,7 @@ const Teaser = ({ title, path, intro, postdate, type }) => (
       </Link>
     </h2>
     <p css={tw`mt-0 mb-4`}>{intro}</p>
-    <Link to={`${type}/${path}`}>Read more</Link>
+    <Link to={`/${type}/${path}`}>Read more</Link>
   </li>
 )
 

@@ -1,4 +1,7 @@
 module.exports = {
   jsx: '@emotion/core',
-  tailwind: './tailwind.config.js',
+  tailwind: {
+    config: './tailwind.config.js',
+    format: 'auto',
+  },
 }

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import tw from 'tailwind.macro'
-import Disqus from 'disqus-react'
 import { graphql } from 'gatsby'
 import dayjs from 'dayjs'
 import { MDXProvider } from '@mdx-js/react'
@@ -20,12 +19,9 @@ export default function PostTemplate(props) {
   const type = post.parent.sourceInstanceName
   const { body } = post
 
-  const disqusShortname = 'simonswiss-1'
-  const disqusConfig = {
-    url: props.location.href,
-    identifier: post.id,
-    title: post.frontmatter.title,
-  }
+  const twitterSearchParam = encodeURIComponent(
+    `simonswiss ${post.frontmatter.title}`
+  )
 
   return (
     <Layout isArticle type={type}>
@@ -47,11 +43,14 @@ export default function PostTemplate(props) {
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </article>
-      <div css={tw`mt-12`}>
-        <Disqus.DiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig}
-        />
+      <div css={tw`mt-16 mb-8`}>
+        <hr css={tw`border-t border-2 border-gray-300 w-16 ml-0 mb-4`} />
+        <p css={tw`text-gray-700`}>
+          <a href={`https://mobile.twitter.com/search?q=${twitterSearchParam}`}>
+            Discuss this {type}
+          </a>{' '}
+          on twitter!
+        </p>
       </div>
     </Layout>
   )
