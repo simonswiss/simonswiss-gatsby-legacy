@@ -1,42 +1,40 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-import { graphql } from 'gatsby'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
+import { graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import Teaser from '../components/teaser'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
+import Teaser from '../components/teaser';
+import SEO from '../components/seo/seo';
 
-export default (props) => {
-  const posts = props.data.allMdx.edges
-  const postsList = posts.map((post) => {
-    const { node } = post
-    return (
-      <Teaser
-        type="posts"
-        key={node.id}
-        title={node.frontmatter.title}
-        path={node.frontmatter.path}
-        intro={node.frontmatter.intro}
-        postdate={node.frontmatter.postdate}
-      />
-    )
-  })
-  return (
-    <Layout>
-      <SEO
-        title="Blog posts | simonswiss.com"
-        description="Thoughts and personal experiences on front end development, and sometimes blogging about other stuff!"
-        isPage={true}
-      />
-      <article>
-        <div className="cms">
-          <ul css={tw`list-none p-0`}>{postsList}</ul>
-        </div>
-      </article>
-    </Layout>
-  )
-}
+const HomePage = (props) => (
+  <Layout>
+    <SEO
+      title="Blog posts | simonswiss.com"
+      description="Thoughts and personal experiences on front end development, and sometimes blogging about other stuff!"
+      isPage={true}
+    />
+    <article>
+      <div className="cms">
+        <ul css={tw`list-none p-0`}>
+          {props.data.allMdx.edges.map((post) => {
+            const { node } = post;
+            return (
+              <Teaser
+                type="posts"
+                key={node.id}
+                title={node.frontmatter.title}
+                path={node.frontmatter.path}
+                intro={node.frontmatter.intro}
+                postdate={node.frontmatter.postdate}
+              />
+            );
+          })}
+        </ul>
+      </div>
+    </article>
+  </Layout>
+);
 
 export const pageQuery = graphql`
   query {
@@ -57,4 +55,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export default HomePage;

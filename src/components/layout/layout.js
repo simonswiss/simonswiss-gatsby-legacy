@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
 
-import GlobalStyles from '../global-styles'
+import GlobalStyles from '../global-styles';
 
-import LayoutMain from './layout-main'
-import LayoutArticle from './layout-article'
+import LayoutMain from './layout-main';
+import LayoutArticle from './layout-article';
 
 class Layout extends React.Component {
   render() {
-    const { children, isArticle, type } = this.props
+    const { children, isArticle, type } = this.props;
 
     return (
       <Fragment>
@@ -18,8 +18,8 @@ class Layout extends React.Component {
           <LayoutMain children={children} />
         )}
       </Fragment>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

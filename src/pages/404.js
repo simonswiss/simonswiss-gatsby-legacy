@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import Headline from '../components/headline'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Headline from '../components/headline';
+import Layout from '../components/layout';
+import SEO from '../components/seo/seo';
 
-const Page = () => (
+const PageNotFound = () => (
   <Layout>
     <SEO
       title="404: Page not found | simonswiss.com"
@@ -16,6 +16,6 @@ const Page = () => (
       <p>Oh no! Looks like you've hit a page that doesn't exist.</p>
     </article>
   </Layout>
-)
+);
 
-export default Page
+export default PageNotFound;

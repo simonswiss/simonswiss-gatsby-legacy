@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 const styles = {
   position: 'relative',
@@ -15,8 +15,8 @@ const styles = {
     width: '100%',
     height: '100%',
   },
-}
+};
 
 export const Video = ({ children }) => (
   <div css={[tw`my-8`, styles]}>{children}</div>
-)
+);

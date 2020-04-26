@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import Headline from '../components/headline'
-import Layout from '../components/layout'
-import SEO from '../components/seo/seo'
+import Headline from '../components/headline';
+import Layout from '../components/layout';
+import SEO from '../components/seo/seo';
 
-export default () => (
+const ContactPage = () => (
   <Layout>
     <SEO
       title="Contact: let's get in touch! | simonswiss.com"
@@ -28,4 +28,6 @@ export default () => (
       </div>
     </article>
   </Layout>
-)
+);
+
+export default ContactPage;

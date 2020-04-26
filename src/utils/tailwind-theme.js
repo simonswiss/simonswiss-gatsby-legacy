@@ -1,6 +1,6 @@
-import theme from 'tailwindcss/defaultTheme'
+import theme from 'tailwindcss/defaultTheme';
 
-export function useTailwindTheme() {
-  const { colors } = theme
-  return { colors }
-}
+export const useTailwindTheme = () => {
+  const { colors } = theme;
+  return { colors };
+};

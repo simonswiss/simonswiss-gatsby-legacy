@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-import { Link } from 'gatsby'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
+import { Link } from 'gatsby';
 
 const Navigation = () => (
   <ul css={tw`list-none p-0 mb-6`}>
@@ -10,7 +10,7 @@ const Navigation = () => (
     <NavLink to="/about">About</NavLink>
     <NavLink to="/contact">Contact</NavLink>
   </ul>
-)
+);
 
 const NavLink = (props) => (
   <li css={tw`mb-1 inline-block lg:block mr-4 sm:mr-5 lg:mr-0`}>
@@ -22,6 +22,6 @@ const NavLink = (props) => (
       {props.children}
     </Link>
   </li>
-)
+);
 
-export default Navigation
+export default Navigation;

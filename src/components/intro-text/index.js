@@ -1,1 +1,1 @@
-export { default } from './intro-text'
+export { default } from './intro-text';

@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 export const Image = ({ src, alt, caption }) => {
   const data = useStaticQuery(
@@ -25,11 +25,11 @@ export const Image = ({ src, alt, caption }) => {
         }
       }
     `
-  )
+  );
 
   const image = data.images.edges.find(
     (image) => src.indexOf(image.node.relativePath) > -1
-  )
+  );
 
   return (
     <div css={tw`my-8`}>
@@ -41,5 +41,5 @@ export const Image = ({ src, alt, caption }) => {
 
       {caption && <p css={tw`mt-4 text-sm text-gray italic`}>{caption}</p>}
     </div>
-  )
-}
+  );
+};

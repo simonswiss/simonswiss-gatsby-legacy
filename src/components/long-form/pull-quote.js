@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 export const PullQuote = ({ block }) => (
   <div>
@@ -12,4 +12,4 @@ export const PullQuote = ({ block }) => (
       <cite>{block.authorName}</cite>
     )}
   </div>
-)
+);

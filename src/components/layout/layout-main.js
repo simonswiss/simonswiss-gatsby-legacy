@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
-import Bio from '../bio'
-import Navigation from '../navigation'
-import SocialLinksList from '../social-icons'
-import Footer from '../footer'
+import Bio from '../bio';
+import Navigation from '../navigation';
+import SocialLinksList from '../social-icons';
+import Footer from '../footer';
 
 // Main layout
 const LayoutMain = ({ children }) => (
@@ -24,6 +24,6 @@ const LayoutMain = ({ children }) => (
     </div>
     <Footer />
   </div>
-)
+);
 
-export default LayoutMain
+export default LayoutMain;

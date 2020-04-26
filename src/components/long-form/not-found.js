@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 export const NotFound = ({ block }) => (
   <pre
@@ -11,4 +11,4 @@ export const NotFound = ({ block }) => (
     </span>
     {block.__typename} block type not found
   </pre>
-)
+);

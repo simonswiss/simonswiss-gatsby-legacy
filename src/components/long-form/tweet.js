@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 const styles = {
   width: 'calc(100vw - 3rem)',
   maxWidth: 500,
-}
+};
 
 export const Tweet = ({ children }) => (
   <div css={[tw`my-8`, styles]}>
@@ -13,4 +13,4 @@ export const Tweet = ({ children }) => (
       {children}
     </blockquote>
   </div>
-)
+);

@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
-import dayjs from 'dayjs'
-import { Link } from 'gatsby'
+import dayjs from 'dayjs';
+import { Link } from 'gatsby';
 
 const Teaser = ({ title, path, intro, postdate, type }) => (
   <li css={tw`mb-8`}>
@@ -20,6 +20,6 @@ const Teaser = ({ title, path, intro, postdate, type }) => (
     <p css={tw`mt-0 mb-4`}>{intro}</p>
     <Link to={`/${type}/${path}`}>Read more</Link>
   </li>
-)
+);
 
-export default Teaser
+export default Teaser;

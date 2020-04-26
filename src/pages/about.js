@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import Headline from '../components/headline'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Headline from '../components/headline';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-export default () => (
+const AboutPage = () => (
   <Layout>
     <SEO
       title="About me: who am I and what can I do? | simonswiss.com"
@@ -99,4 +99,6 @@ export default () => (
       </div>
     </article>
   </Layout>
-)
+);
+
+export default AboutPage;

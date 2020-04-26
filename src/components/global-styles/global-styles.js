@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, css, Global } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx, css, Global } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 export default () => (
   <Global
@@ -329,4 +329,4 @@ export default () => (
       }
     `}
   />
-)
+);

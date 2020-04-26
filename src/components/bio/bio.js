@@ -1,12 +1,13 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-import { Link } from 'gatsby'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
+import { Link } from 'gatsby';
 
-import { useTailwindTheme } from '../../utils'
+import { useTailwindTheme } from '../../utils';
 
 const Bio = () => {
-  const { colors } = useTailwindTheme()
+  const { colors } = useTailwindTheme();
+
   return (
     <div css={tw`mb-8`}>
       <div css={tw`flex md:flex-col items-center md:items-start`}>
@@ -52,7 +53,7 @@ const Bio = () => {
         <a href="https://thinkmill.com.au">Thinkmill</a>.
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

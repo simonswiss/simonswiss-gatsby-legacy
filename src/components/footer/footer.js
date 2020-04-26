@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 const Footer = () => (
   <footer css={tw`max-w-4xl mx-auto px-4 my-8 w-full`}>
@@ -13,6 +13,6 @@ const Footer = () => (
       <a href="https://tailwindcss.com">Tailwind CSS</a>.
     </p>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

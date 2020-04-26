@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import { Link } from 'gatsby'
-import tw from 'tailwind.macro'
-import Footer from '../footer'
+import { jsx } from '@emotion/core';
+import { Link } from 'gatsby';
+import tw from 'tailwind.macro';
+import Footer from '../footer';
 
 const LayoutArticle = ({ children, type }) => (
   <div css={tw`flex flex-col justify-between`}>
@@ -21,6 +21,6 @@ const LayoutArticle = ({ children, type }) => (
     </div>
     <Footer />
   </div>
-)
+);
 
-export default LayoutArticle
+export default LayoutArticle;

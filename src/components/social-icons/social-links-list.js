@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 import {
   IconLink,
@@ -11,7 +11,7 @@ import {
   CodePenSvg,
   YouTubeSvg,
   MediumSvg,
-} from './social-icons'
+} from './social-icons';
 
 const SocialLinksList = () => (
   <nav css={tw`pt-0 mb-4 sm:mb-0`}>
@@ -51,6 +51,6 @@ const SocialLinksList = () => (
       icon={<LinkedInSvg />}
     />
   </nav>
-)
+);
 
-export default SocialLinksList
+export default SocialLinksList;

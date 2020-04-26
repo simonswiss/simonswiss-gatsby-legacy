@@ -1,1 +1,1 @@
-export { useTailwindTheme } from './tailwind-theme'
+export { useTailwindTheme } from './tailwind-theme';

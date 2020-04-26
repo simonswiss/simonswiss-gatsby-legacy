@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 export default ({ children }) => (
   <p
@@ -13,4 +13,4 @@ export default ({ children }) => (
   >
     {children}
   </p>
-)
+);

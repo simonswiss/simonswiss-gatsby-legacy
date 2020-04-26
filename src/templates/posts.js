@@ -1,27 +1,27 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
-import { graphql } from 'gatsby'
-import dayjs from 'dayjs'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
+import { graphql } from 'gatsby';
+import dayjs from 'dayjs';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/layout'
-import { Headline } from '../components/long-form'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
+import { Headline } from '../components/long-form';
+import SEO from '../components/seo/seo';
 
 const components = {
   h2: Headline,
-}
+};
 
-export default function PostTemplate(props) {
-  const post = props.data.mdx
-  const type = post.parent.sourceInstanceName
-  const { body } = post
+const PostTemplate = (props) => {
+  const post = props.data.mdx;
+  const type = post.parent.sourceInstanceName;
+  const { body } = post;
 
   const twitterSearchParam = encodeURIComponent(
     `simonswiss ${post.frontmatter.title}`
-  )
+  );
 
   return (
     <Layout isArticle type={type}>
@@ -43,7 +43,8 @@ export default function PostTemplate(props) {
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
       </article>
-      <div css={tw`mt-16 mb-8`}>
+
+      <footer css={tw`mt-16 mb-8`}>
         <hr css={tw`border-t border-2 border-gray-300 w-16 ml-0 mb-4`} />
         <p css={tw`text-gray-700`}>
           <a href={`https://mobile.twitter.com/search?q=${twitterSearchParam}`}>
@@ -51,10 +52,10 @@ export default function PostTemplate(props) {
           </a>{' '}
           on twitter!
         </p>
-      </div>
+      </footer>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -74,4 +75,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export default PostTemplate;
