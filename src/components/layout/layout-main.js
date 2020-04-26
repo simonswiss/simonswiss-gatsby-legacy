@@ -14,7 +14,7 @@ const LayoutMain = ({ children }) => (
       css={tw`my-8 md:my-16 max-w-5xl w-full mx-auto px-6 lg:flex font-sans leading-normal`}
     >
       <aside css={tw`md:w-full lg:w-1/3`}>
-        <div css={tw`sm:pr-12 max-w-sm lg:border-r lg:border-gray-200 mb-8`}>
+        <div css={tw`sm:pr-12 max-w-md lg:border-r lg:border-gray-200 mb-8`}>
           <Bio />
           <Navigation />
           <SocialLinksList />
