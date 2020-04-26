@@ -8,7 +8,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/layout'
 import { Headline } from '../components/long-form'
-import SEO from '../components/seo'
+import { Seo } from '../components/seo'
 
 const components = {
   h2: Headline,
@@ -25,7 +25,7 @@ export default function PostTemplate(props) {
 
   return (
     <Layout isArticle type={type}>
-      <SEO
+      <Seo
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
         description={post.frontmatter.intro}
       />

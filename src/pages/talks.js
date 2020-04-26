@@ -5,11 +5,11 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Teaser from '../components/teaser'
-import SEO from '../components/seo'
+import { Seo } from '../components/seo'
 
-export default props => {
+export default (props) => {
   const talks = props.data.allMdx.edges
-  const talksList = talks.map(post => {
+  const talksList = talks.map((post) => {
     const { node } = post
     return (
       <Teaser
@@ -24,7 +24,7 @@ export default props => {
   })
   return (
     <Layout>
-      <SEO
+      <Seo
         title="Public speaking: Tech meetup and conference talks | simonswiss.com"
         description="Tech talks presented at conferences and meetups. I want to do more of this. Like my style and want me to speak at your event? Let's talk! :)"
         isPage={true}

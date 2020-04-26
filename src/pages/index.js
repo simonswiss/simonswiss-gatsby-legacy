@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Teaser from '../components/teaser'
-import SEO from '../components/seo'
+import { Seo } from '../components/seo'
 
 export default (props) => {
   const posts = props.data.allMdx.edges
@@ -24,7 +24,7 @@ export default (props) => {
   })
   return (
     <Layout>
-      <SEO
+      <Seo
         title="Blog posts | simonswiss.com"
         description="Thoughts and personal experiences on front end development, and sometimes blogging about other stuff!"
         isPage={true}

@@ -2,11 +2,11 @@ import React from 'react'
 
 import Headline from '../components/headline'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import { Seo } from '../components/seo'
 
 export default () => (
   <Layout>
-    <SEO
+    <Seo
       title="Contact: let's get in touch! | simonswiss.com"
       description="I am friendly. 👋 And Swiss. 🇨🇭 Which means I am both nice and reliable! Want to get in contact? Say hello, don’t be shy!"
       isPage={true}
