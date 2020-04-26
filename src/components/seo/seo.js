@@ -13,7 +13,6 @@ const SEO = (props) => {
           logo
           siteUrl
           author
-          twitter
         }
       }
     }
