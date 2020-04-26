@@ -27,7 +27,7 @@ const Bio = () => (
       <h2 css={tw`my-3 leading-tight font-bold`}>Simon Vrachliotis</h2>
     </div>
 
-    <p css={tw`text-gray-700 mt-4 md:mt-0 mb-8`}>
+    <p css={tw`text-sm sm:text-base text-gray-700 mt-4 md:mt-0 mb-8`}>
       Swiss front-end designer and developer based on Sydney's Northern Beaches.
       Proud father of two. Surf, basketball, ukulele. Love learning, love
       teaching - doing both with{' '}

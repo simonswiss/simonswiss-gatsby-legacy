@@ -12,12 +12,12 @@ const Navigation = () => (
   </ul>
 )
 
-const NavLink = props => (
-  <li css={tw`mb-1`}>
+const NavLink = (props) => (
+  <li css={tw`mb-1 inline-block lg:block mr-4 sm:mr-5 lg:mr-0`}>
     <Link
       to={props.to}
-      style={tw`text-purple-500 no-underline inline-block border-b-2 border-transparent`}
-      activeStyle={tw`text-purple-800 no-underline inline-block border-b-2 border-purple-600`}
+      css={tw`text-purple-500 no-underline inline-block border-b-2 border-transparent`}
+      activeStyle={tw`text-purple-800 border-purple-600`}
     >
       {props.children}
     </Link>
