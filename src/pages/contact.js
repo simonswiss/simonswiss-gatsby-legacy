@@ -1,8 +1,8 @@
 import React from 'react'
 
+import Headline from '../components/headline'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Headline from '../components/headline'
 
 export default () => (
   <Layout>

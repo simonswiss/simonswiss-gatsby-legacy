@@ -6,9 +6,9 @@ import dayjs from 'dayjs'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { Headline } from '../components/long-form'
+import SEO from '../components/seo'
 
 const components = {
   h2: Headline,

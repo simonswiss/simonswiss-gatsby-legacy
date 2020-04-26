@@ -1,7 +1,8 @@
 import React from 'react'
-import SEO from '../components/seo/'
-import Layout from '../components/layout'
+
 import Headline from '../components/headline'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default () => (
   <Layout>
