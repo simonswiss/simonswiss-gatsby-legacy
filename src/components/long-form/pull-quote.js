@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-export default ({ block }) => (
+
+export const PullQuote = ({ block }) => (
   <div>
     <blockquote>{block.quote}</blockquote>
     {block.authorLink ? (

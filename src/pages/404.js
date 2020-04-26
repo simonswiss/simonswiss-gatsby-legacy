@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import React from 'react'
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
+import Headline from '../components/headline'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Page = () => (
   <Layout>
@@ -13,9 +12,7 @@ const Page = () => (
       isPage={true}
     />
     <article>
-      <h1 css={tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`}>
-        Oops - 404 Error!
-      </h1>
+      <Headline>Oops - 404 Error!</Headline>
       <p>Oh no! Looks like you've hit a page that doesn't exist.</p>
     </article>
   </Layout>

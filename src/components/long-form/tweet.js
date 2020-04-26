@@ -7,7 +7,7 @@ const styles = {
   maxWidth: 500,
 }
 
-export default ({ children }) => (
+export const Tweet = ({ children }) => (
   <div css={[tw`my-8`, styles]}>
     <blockquote className="twitter-tweet" data-lang="en">
       {children}

@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import tw from 'tailwind.macro'
+import React from 'react'
 
-import SEO from '../components/SEO'
-import Layout from '../components/Layout'
+import Headline from '../components/headline'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 export default () => (
   <Layout>
@@ -14,9 +13,7 @@ export default () => (
     />
 
     <article>
-      <h1 css={tw`mb-4 font-black leading-tight text-3xl lg:text-4xl`}>
-        Nice to meet you!
-      </h1>
+      <Headline>Nice to meet you!</Headline>
       <div>
         <p>
           I enjoy writing clean frontend code and building good, human

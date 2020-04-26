@@ -11,7 +11,7 @@ import {
   CodePenSvg,
   YouTubeSvg,
   MediumSvg,
-} from './SocialIcons'
+} from './social-icons'
 
 const SocialLinksList = () => (
   <nav css={tw`pt-0 mb-4 sm:mb-0`}>
