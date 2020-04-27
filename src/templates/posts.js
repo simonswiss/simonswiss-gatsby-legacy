@@ -29,7 +29,7 @@ const PostTemplate = (props) => {
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
         description={post.frontmatter.intro}
       />
-      <article css={tw`max-w-4xl text-lg xl:text-xl`}>
+      <article css={tw`text-lg xl:text-xl`}>
         <h1 css={tw`text-3xl lg:text-4xl xl:text-5xl leading-tight`}>
           {post.frontmatter.title}
         </h1>
