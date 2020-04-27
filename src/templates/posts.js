@@ -29,10 +29,14 @@ const PostTemplate = (props) => {
         title={`${post.frontmatter.title} | ${type} | simonswiss`}
         description={post.frontmatter.intro}
       />
-      <article css={tw`max-w-2xl`}>
-        <h1 css={tw`text-3xl leading-tight`}>{post.frontmatter.title}</h1>
+      <article css={tw`max-w-4xl text-lg xl:text-xl`}>
+        <h1 css={tw`text-3xl lg:text-4xl xl:text-5xl leading-tight`}>
+          {post.frontmatter.title}
+        </h1>
 
-        <p css={tw`mb-6 uppercase tracking-wider text-sm text-gray-500`}>
+        <p
+          css={tw`mb-6 uppercase tracking-wider text-sm lg:text-base text-gray-500`}
+        >
           Posted on{' '}
           {post.frontmatter.postdate
             ? dayjs(post.frontmatter.postdate).format('MMMM D YYYY')
@@ -46,7 +50,7 @@ const PostTemplate = (props) => {
 
       <footer css={tw`mt-16 mb-8`}>
         <hr css={tw`border-t border-2 border-gray-300 w-16 ml-0 mb-4`} />
-        <p css={tw`text-gray-700`}>
+        <p css={tw`text-gray-700 md:text-lg lg:text-xl`}>
           <a href={`https://mobile.twitter.com/search?q=${twitterSearchParam}`}>
             Discuss this {type}
           </a>{' '}

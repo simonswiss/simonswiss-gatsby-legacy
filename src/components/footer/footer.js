@@ -4,7 +4,7 @@ import tw from 'tailwind.macro';
 
 const Footer = () => (
   <footer css={tw`max-w-4xl mx-auto px-4 my-8 w-full`}>
-    <p css={tw`text-gray-700`}>
+    <p css={tw`text-gray-700 md:text-lg`}>
       Built with{' '}
       <span role="img" aria-label="emoji">
         😍

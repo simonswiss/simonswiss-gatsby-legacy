@@ -1,4 +1,6 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 import Headline from '../components/headline';
 import Layout from '../components/layout';
@@ -12,7 +14,7 @@ const AboutPage = () => (
       isPage={true}
     />
 
-    <article>
+    <article css={tw`lg:text-lg`}>
       <Headline>Nice to meet you!</Headline>
       <div>
         <p>
