@@ -9,13 +9,13 @@ const LayoutArticle = ({ children, type }) => (
     <div css={tw`max-w-5xl p-8`}>
       <Link
         to={type === 'talks' ? '/talks' : '/'}
-        css={tw`no-underline hover:underline text-purple-500`}
+        css={tw`no-underline hover:underline text-purple-500 md:text-lg`}
       >
         &larr; {type === 'talks' ? 'See all talks' : 'Back to blog'}
       </Link>
     </div>
     <div
-      css={tw`mt-4 sm:mt-16 mb-8 max-w-2xl w-full mx-auto flex font-sans leading-normal px-4`}
+      css={tw`mt-4 sm:mt-16 mb-8 max-w-2xl lg:max-w-3xl w-full mx-auto flex font-sans leading-normal px-4`}
     >
       <main>{children}</main>
     </div>

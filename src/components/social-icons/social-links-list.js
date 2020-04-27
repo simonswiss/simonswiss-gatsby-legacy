@@ -14,41 +14,41 @@ import {
 } from './social-icons';
 
 const SocialLinksList = () => (
-  <nav css={tw`pt-0 mb-4 sm:mb-0`}>
+  <nav css={tw`pt-0 mb-4 sm:mb-0 lg:mt-8`}>
     <IconLink
       url="https://twitter.com/simonswiss"
       title="Twitter"
-      icon={<TwitterSvg />}
+      icon={TwitterSvg}
     />
     <IconLink
       url="http://codepen.io/simonswiss"
       title="CodePen"
-      icon={<CodePenSvg />}
+      icon={CodePenSvg}
     />
     <IconLink
       url="https://youtube.com/simonswissdev"
       title="youtube"
-      icon={<YouTubeSvg />}
+      icon={YouTubeSvg}
     />
     <IconLink
       url="https://medium.com/@simonswiss/"
       title="Medium"
-      icon={<MediumSvg />}
+      icon={MediumSvg}
     />
     <IconLink
       url="https://github.com/simonswiss"
       title="GitHub"
-      icon={<GitHubSvg />}
+      icon={GitHubSvg}
     />
     <IconLink
       url="https://instagram.com/simonswiss"
       title="Instagram"
-      icon={<InstagramSvg />}
+      icon={InstagramSvg}
     />
     <IconLink
       url="https://www.linkedin.com/in/simon-vrachliotis-018a7a1b"
       title="LinkedIn"
-      icon={<LinkedInSvg />}
+      icon={LinkedInSvg}
     />
   </nav>
 );

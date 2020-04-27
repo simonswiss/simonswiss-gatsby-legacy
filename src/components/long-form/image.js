@@ -32,14 +32,18 @@ export const Image = ({ src, alt, caption }) => {
   );
 
   return (
-    <div css={tw`my-8`}>
+    <div css={tw`my-8 lg:my-12`}>
       <Img
         fluid={image.node.childImageSharp.fluid}
         css={tw`w-full shadow-lg rounded`}
         alt={alt}
       />
 
-      {caption && <p css={tw`mt-4 text-sm text-gray italic`}>{caption}</p>}
+      {caption && (
+        <p css={tw`mt-4 text-base md:text-lg text-gray-600 italic font-serif`}>
+          {caption}
+        </p>
+      )}
     </div>
   );
 };

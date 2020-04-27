@@ -47,10 +47,14 @@ const Bio = () => {
           </svg>
         </Link>
 
-        <h2 css={tw`my-3 leading-tight font-bold`}>Simon Vrachliotis</h2>
+        <h2
+          css={tw`my-3 leading-tight font-bold text-xl sm:text-2xl xl:text-3xl`}
+        >
+          Simon Vrachliotis
+        </h2>
       </div>
 
-      <p css={tw`mt-4 text-sm sm:text-base text-gray-700`}>
+      <p css={tw`mt-4 md:mt-2 text-sm sm:text-base lg:text-lg text-gray-700`}>
         Swiss front-end designer & developer living in Sydney, Australia. Life
         enthusiast, father of two. Surf, basketball, ukulele. Love learning,
         love teaching - doing both with{' '}
