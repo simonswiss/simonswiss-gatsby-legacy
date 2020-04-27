@@ -42,6 +42,7 @@
     "gatsby-transformer-sqip": "^2.2.7",
     "install": "^0.13.0",
     "npm": "^6.11.3",
+    "prism-react-renderer": "^1.1.0",
     "prismjs": "^1.17.1",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
