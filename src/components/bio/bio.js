@@ -55,10 +55,11 @@ const Bio = () => {
       </div>
 
       <p css={tw`mt-4 md:mt-2 text-sm sm:text-base lg:text-lg text-gray-700`}>
-        Swiss front-end designer & developer living in Sydney, Australia. Life
+        Swiss front-end designer & developer living in Sydney, Australia.
+        Product & Community @{' '}
+        <a href="https://twitter.com/tailwindlabs">Tailwind Labs</a>. Life
         enthusiast, father of two. Surf, basketball, ukulele. Love learning,
-        love teaching - doing both with{' '}
-        <a href="https://thinkmill.com.au">Thinkmill</a>.
+        love teaching.
       </p>
     </div>
   );
